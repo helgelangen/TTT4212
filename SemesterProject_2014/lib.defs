@@ -1,0 +1,5 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+DEFINE SemesterProject_2014_lib SemesterProject_2014_lib
+ASSIGN SemesterProject_2014_lib libMode shared
+INCLUDE $HOME/Downloads/CGH40_r6_converted/lib.defs
+INCLUDE $HOME/Downloads/Johanson_wrk/lib.defs
