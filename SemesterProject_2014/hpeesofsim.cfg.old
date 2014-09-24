@@ -4,4 +4,3 @@ DE_SIM_FILE_PATH=./data:/home/helgel/Downloads/CGH40_r6_converted/circuit/data;/
 DESIGN_KIT_MODEL_PATH=/home/helgel/Downloads/CGH40_r6_converted/bin/linux_x86_64_GCC462
 DESIGN_KIT_VERILOGA_PATH=/home/helgel/Downloads/CGH40_r6_converted/veriloga
 DESIGN_KIT_SIM_FILE_PATH=/home/helgel/Downloads/CGH40_r6_converted/circuit/data;/home/helgel/Downloads/CGH40_r6_converted/circuit/models
-DKIT_ADSLIBCONFIG_PATH=/home/helgel/Documents/TTT4212/git/SemesterProject_2014
