@@ -1,5 +1,5 @@
 SYSTEM_CUSTOM_CIRCUIT_SYMBOLS={%DESIGN_KIT_SYSTEM_CUSTOM_CIRCUIT_SYMBOLS}:{$HPEESOF_DIR}/custom/{%PROJECT1}/symbols
 SYSTEM_CUSTOM_CIRCUIT_DESIGNS={%DESIGN_KIT_SYSTEM_CUSTOM_CIRCUIT_DESIGNS}:{$HPEESOF_DIR}/custom/{%PROJECT1}/designs
 VIA_CONFIG_PATH={%DESIGN_KIT_VIA_CONFIG_PATH}:.:{%PROJECT_SEARCH_PATH}:{$HOME}/hpeesof/de/defaults:{$HPEESOF_DIR}/de/defaults:{%USER_VIA_CONFIG_PATH}
-DESIGN_KIT_SYSTEM_CUSTOM_CIRCUIT_SYMBOLS=/home/helgel/Downloads/CGH40_r6_converted/circuit/symbols:/home/helgel/Downloads/CGH40_r6_converted/circuit/symbols
-DESIGN_KIT_DATA_FILES=/home/helgel/Downloads/CGH40_r6_converted/circuit/data;/home/helgel/Downloads/CGH40_r6_converted/circuit/models
+LAST_LIBRARY_SELECTED=SemesterProject_2014_lib
+SCHEM_FILE_OPEN_HISTORY_1=SemesterProject_2014_lib:Amp_2GHz:schematic
