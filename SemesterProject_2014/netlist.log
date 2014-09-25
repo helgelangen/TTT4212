@@ -1,13 +1,46 @@
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="SemesterProject_2014_lib:DC_workpoint:schematic"
-#uselib "CGH40_r6" , "CGH40010F_r6_CGH40_r6"
-"CGH40010F_r6_CGH40_r6":X1  N__3 N__1 0 0 tcase=25 crth=5.0 
-V_Source:SRC2  N__4 0 Type="V_DC" Vdc=6 V SaveCurrent=1 
-V_Source:SRC1  N__3 0 Type="V_DC" Vdc=VCC V SaveCurrent=1 
-DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
-SweepVar="VCC" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="SemesterProject_2014_lib:FET_IV_Gm_PowerCalcs:schematic"
 
-SweepPlan: DC1_stim Start=-4 Stop=2.5 Step=0.01 
+global VDS = 0 V
+global VGS = 0 V
+V_Source:SRC4  N__1 0 Type="V_AC" Vdc=VGS Vac=1 mV Freq=freq V_Noise=0 uV SaveCurrent=0 
+ParamSweep:Sweep2 SimInstanceName[1]="AC1" StatusLevel=2 SweepVar="VDS" SweepPlan="Sweep2_stim" 
+
+SweepPlan: Sweep2_stim Start=VDS_Start Stop=VDS_Stop Step=VDS_Step 
+
+ParamSweep:Sweep1 SimInstanceName[1]="DC1" SimInstanceName[2]="Sweep2" StatusLevel=2 SweepVar="VGS" SweepPlan="Sweep1_stim" 
+
+SweepPlan: Sweep1_stim Start=-4 Stop=2 Step=0.2 
+
+
+VDS_Start=0
+VDS_Stop=28
+VDS_Step=0.1
+AC:AC1 SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
+OutputPlan="AC1_Output" Freq=1.0 GHz 
+
+OutputPlan:AC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+SweepVar="VDS" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
+
+SweepPlan: DC1_stim Start=VDS_Start Stop=VDS_Stop Step=VDS_Step 
 
 OutputPlan:DC1_Output \
       Type="Output" \
@@ -27,6 +60,8 @@ OutputPlan:DC1_Output \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
 
-
-VCC=1.0
-Short:I_Probe1  N__4 N__1 Mode=0 SaveCurrent=yes 
+V_Source:SRC1  N__2 0 Type="V_DC" Vdc=VDS SaveCurrent=0 
+#uselib "CGH40_r6" , "CGH40010F_r6_CGH40_r6"
+"CGH40010F_r6_CGH40_r6":X1  N__1 N__3 0 N__4 tcase=25 crth=5.0 
+Short:IDS  N__2 N__3 Mode=0 SaveCurrent=yes 
+model FLC301XP GaAs NFET=1 PFET=0 Idsmod=3 Vto=-4 Beta=0.0999 Lambda=0 Alpha=1.7 B=0.0569 Vbi=1.8 Tau=61.0e-12 Cgs=14.0e-12 Cgd=2.4e-12 Rgd=0.98 Fc=0.5 Rd=0.23 Rg=0.03 Rs=0.06 Cds=1.0e-12 Crf=4e-7 Rc=1400 Is=1e-14 N=1.2 Eg=1.11 Vbr=0 Taumdl=1 

@@ -1,5 +1,5 @@
 LAST_LIBRARY_SELECTED=SemesterProject_2014_lib
-SCHEM_FILE_OPEN_HISTORY_1=SemesterProject_2014_lib:DC_workpoint:schematic
+SCHEM_FILE_OPEN_HISTORY_1=SemesterProject_2014_lib:FET_IV_Gm_PowerCalcs:schematic
 
 
 
@@ -11,5 +11,7 @@ DESIGN_KIT_SYSTEM_CUSTOM_CIRCUIT_SYMBOLS=C:\Users\JF\Documents\GitHub\TTT4212\Se
 
 DESIGN_KIT_DATA_FILES=C:\Users\JF\Documents\GitHub\TTT4212\SemesterProject_2014\CGH40\CGH40_r6_converted\circuit\data;C:\Users\JF\Documents\GitHub\TTT4212\SemesterProject_2014\CGH40\CGH40_r6_converted\circuit\models
 
-SCHEM_FILE_OPEN_HISTORY_2=Johanson_lib:JTCap0603:schematic
-SCHEM_FILE_OPEN_HISTORY_3=SemesterProject_2014_lib:Amp_2GHz:schematic
+SCHEM_FILE_OPEN_HISTORY_2=SemesterProject_2014_lib:temp:schematic
+SCHEM_FILE_OPEN_HISTORY_3=SemesterProject_2014_lib:DC_workpoint:schematic
+SCHEM_FILE_OPEN_HISTORY_4=Johanson_lib:JTCap0603:schematic
+SCHEM_FILE_OPEN_HISTORY_5=SemesterProject_2014_lib:Amp_2GHz:schematic

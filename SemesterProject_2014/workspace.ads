@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="1" Version="100">
+<ADSWorkspace Revision="2" Version="100">
     <Workspace Name="">
         <Library Name="SemesterProject_2014_lib" />
         <Library Name="ads_standard_layers" />
@@ -37,5 +37,9 @@
         <ConfigFile Name="de_sim.cfg" />
         <ConfigFile Name="hpeesofsim.cfg" />
         <Data_Display Name="DC_workpoint.dds" />
+        <Cell Name="SemesterProject_2014_lib:FET_IV_Gm_PowerCalcs" />
+        <Data_Display Name="FET_IV_Gm_PowerCalcs.dds" />
+        <Dataset Name="FET_IV_Gm_PowerCalcs.ds" />
+        <ConfigFile Name="dds.cfg" />
     </Workspace>
 </ADSWorkspace>
