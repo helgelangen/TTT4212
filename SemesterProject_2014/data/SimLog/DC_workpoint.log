@@ -1,0 +1,16 @@
+Warning detected by hpeesofsim during netlist flattening.
+    Resistor `X1.X2.R2' is shorted.
+
+Warning detected by hpeesofsim during netlist flattening.
+    Capacitor `X1.X2.C8' is shorted.
+
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with no DC path to ground (topology corrected): 1
+
+
+DC DC1[1] <SemesterProject_2014_lib:DC_workpoint:schematic>   VCC=(-4->2.5)
+...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+
+Resource usage:
+  Total stopwatch time     =     0.69 seconds.
+

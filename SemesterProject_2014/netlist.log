@@ -1,0 +1,32 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="SemesterProject_2014_lib:DC_workpoint:schematic"
+#uselib "CGH40_r6" , "CGH40010F_r6_CGH40_r6"
+"CGH40010F_r6_CGH40_r6":X1  N__3 N__1 0 0 tcase=25 crth=5.0 
+V_Source:SRC2  N__4 0 Type="V_DC" Vdc=6 V SaveCurrent=1 
+V_Source:SRC1  N__3 0 Type="V_DC" Vdc=VCC V SaveCurrent=1 
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+SweepVar="VCC" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
+
+SweepPlan: DC1_stim Start=-4 Stop=2.5 Step=0.01 
+
+OutputPlan:DC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+
+VCC=1.0
+Short:I_Probe1  N__4 N__1 Mode=0 SaveCurrent=yes 
