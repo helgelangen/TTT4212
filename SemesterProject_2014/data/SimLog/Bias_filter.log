@@ -1,0 +1,44 @@
+
+SP SP1[1] <SemesterProject_2014_lib:Bias_filter:schematic>   freq=(1 GHz->10 GHz)
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.004800) for 'W' in `Gap3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.004800) for 'W' in `Gap2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.004800) for 'W' in `Gap1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000001) < MinRecommendValue(0.000016) OR UserValue > MaxRecommendValue(0.160000) for 'W' in `TL2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000001) < MinRecommendValue(0.000016) OR UserValue > MaxRecommendValue(0.160000) for 'W' in `TL1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.016000) for 'W1' in `Tee3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.016000) for 'W2' in `Tee3'
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+Resource usage:
+    User time                 =     0.93 seconds.
+    System time               =     0.14 seconds.
+    Total CPU time            =     1.07 seconds.
+    Simulation stopwatch time =     0.89 seconds.
+    Total stopwatch time      =     1.09 seconds.
+
+    Physical memory used: 79.8 MBytes.
+    Incremental virtual memory (data only) used:  18.3 MBytes.
+

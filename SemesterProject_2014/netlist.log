@@ -1,67 +1,45 @@
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="SemesterProject_2014_lib:FET_IV_Gm_PowerCalcs:schematic"
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="SemesterProject_2014_lib:Bias_filter:schematic"
+define JTCap0603 ( N__5  N__2 ) 
+parameters  C=1 
+C:C7  N__1 N__2 C=0.937*C pF 
+L:L1  N__5 N__1 L=0.647e-9*C^-0.0414 R=3.74*C^-0.195 Ohm Noise=yes  
+C:C10  N__2 0 C=0.0317 pF 
+C:C9  N__5 0 C=0.0317 pF 
+end JTCap0603
+model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+33 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+MGAP:Gap1  N__14 N__21 Subst="MSub1" W=W mm S=0.25 mm 
+MGAP:Gap2  N__11 N__24 Subst="MSub1" W=W mm S=0.25 mm 
+MGAP:Gap3  N__18 N__27 Subst="MSub1" W=W mm S=0.25 mm 
+MLIN2:TL1  N__6 N__7 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL2  N__8 N__9 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+VIAGND:V1  N__14 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
+VIAGND:V2  N__11 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
+VIAGND:V3  N__18 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
+JTCap0603:Kap1  N__14 N__21 C=100p 
+JTCap0603:Kap2  N__11 N__24 C=33p 
+JTCap0603:Kap3  N__18 N__27 C=10p 
+MTEE_ADS:Tee1  N__6 V1 N__21 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee2  N__8 N__7 N__24 Subst="MSub1" W1=W mm W2=W mm W3=L mm 
+MTEE_ADS:Tee3  N__26 N__9 N__27 Subst="MSub1" W1=W mm W2=W mm W3=L mm 
 
-global VDS = 0 V
-global VGS = 0 V
-V_Source:SRC4  N__1 0 Type="V_AC" Vdc=VGS Vac=1 mV Freq=freq V_Noise=0 uV SaveCurrent=0 
-ParamSweep:Sweep2 SimInstanceName[1]="AC1" StatusLevel=2 SweepVar="VDS" SweepPlan="Sweep2_stim" 
+W=0.625 mm tune{ 0.3125 mm to 0.9375 mm by 0.0625 mm }
+L=2.5 mm tune{ 1.25 mm to 3.75 mm by 0.25 mm }
+VIAGND:V4  N__22 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
+VIAGND:V5  N__25 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: Sweep2_stim Start=VDS_Start Stop=VDS_Stop Step=VDS_Step 
+SweepPlan: SP1_stim Start=1.0 GHz Stop=10.0 GHz Step=1.0 MHz 
 
-ParamSweep:Sweep1 SimInstanceName[1]="DC1" SimInstanceName[2]="Sweep2" StatusLevel=2 SweepVar="VGS" SweepPlan="Sweep1_stim" 
-
-SweepPlan: Sweep1_stim Start=-4 Stop=2 Step=0.2 
-
-
-VDS_Start=0
-VDS_Stop=28
-VDS_Step=0.1
-AC:AC1 SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
-OutputPlan="AC1_Output" Freq=1.0 GHz 
-
-OutputPlan:AC1_Output \
+OutputPlan:SP1_Output \
       Type="Output" \
-      UseNodeNestLevel=yes \
-      NodeNestLevel=2 \
       UseEquationNestLevel=yes \
       EquationNestLevel=2 \
       UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2 \
-      UseDeviceCurrentNestLevel=no \
-      DeviceCurrentNestLevel=0 \
-      DeviceCurrentDeviceType="All" \
-      DeviceCurrentSymSyntax=yes \
-      UseCurrentNestLevel=yes \
-      CurrentNestLevel=999 \
-      UseDeviceVoltageNestLevel=no \
-      DeviceVoltageNestLevel=0 \
-      DeviceVoltageDeviceType="All"
+      SavedEquationNestLevel=2
 
-DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
-SweepVar="VDS" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
-
-SweepPlan: DC1_stim Start=VDS_Start Stop=VDS_Stop Step=VDS_Step 
-
-OutputPlan:DC1_Output \
-      Type="Output" \
-      UseNodeNestLevel=yes \
-      NodeNestLevel=2 \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2 \
-      UseDeviceCurrentNestLevel=no \
-      DeviceCurrentNestLevel=0 \
-      DeviceCurrentDeviceType="All" \
-      DeviceCurrentSymSyntax=yes \
-      UseCurrentNestLevel=yes \
-      CurrentNestLevel=999 \
-      UseDeviceVoltageNestLevel=no \
-      DeviceVoltageNestLevel=0 \
-      DeviceVoltageDeviceType="All"
-
-V_Source:SRC1  N__2 0 Type="V_DC" Vdc=VDS SaveCurrent=0 
-#uselib "CGH40_r6" , "CGH40010F_r6_CGH40_r6"
-"CGH40010F_r6_CGH40_r6":X1  N__1 N__3 0 N__4 tcase=25 crth=5.0 
-Short:IDS  N__2 N__3 Mode=0 SaveCurrent=yes 
-model FLC301XP GaAs NFET=1 PFET=0 Idsmod=3 Vto=-4 Beta=0.0999 Lambda=0 Alpha=1.7 B=0.0569 Vbi=1.8 Tau=61.0e-12 Cgs=14.0e-12 Cgd=2.4e-12 Rgd=0.98 Fc=0.5 Rd=0.23 Rg=0.03 Rs=0.06 Cds=1.0e-12 Crf=4e-7 Rc=1400 Is=1e-14 N=1.2 Eg=1.11 Vbr=0 Taumdl=1 
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+Port:Term1  V1 N__22 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  N__26 N__25 Num=2 Z=50 Ohm Noise=yes 

@@ -1,0 +1,41 @@
+
+SP SP1[1] <SemesterProject_2014_lib:Amp_2GHz:schematic>   freq=(1 MHz->10 GHz)
+.Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V4'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.390625) < MinRecommendValue(1.000000) OR UserValue > MaxRecommendValue(2.200000) for 'W/H' in `V4'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.390625) < MinRecommendValue(1.000000) OR UserValue > MaxRecommendValue(2.200000) for 'W/H' in `V3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.390625) < MinRecommendValue(1.000000) OR UserValue > MaxRecommendValue(2.200000) for 'W/H' in `V1'
+
+..........
+
+Resource usage:
+    User time                 =     0.26 seconds.
+    System time               =     0.02 seconds.
+    Total CPU time            =     0.28 seconds.
+    Simulation stopwatch time =     0.09 seconds.
+    Total stopwatch time      =     0.30 seconds.
+
+    Physical memory used: 79.8 MBytes.
+    Incremental virtual memory (data only) used:  18.3 MBytes.
+
