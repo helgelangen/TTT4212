@@ -16,21 +16,17 @@ MLIN2:TL2  N__8 N__9 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+28 mm Wall2=2.5e+28 
 VIAGND:V1  N__14 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
 VIAGND:V2  N__11 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
 VIAGND:V3  N__18 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
-JTCap0603:Kap1  N__14 N__21 C=100p 
-JTCap0603:Kap2  N__11 N__24 C=33p 
-JTCap0603:Kap3  N__18 N__27 C=10p 
+JTCap0603:Kap1  N__14 N__21 C=100m 
+JTCap0603:Kap2  N__11 N__24 C=33m 
+JTCap0603:Kap3  N__18 N__27 C=10m 
 MTEE_ADS:Tee1  N__6 V1 N__21 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 MTEE_ADS:Tee2  N__8 N__7 N__24 Subst="MSub1" W1=W mm W2=W mm W3=L mm 
 MTEE_ADS:Tee3  N__26 N__9 N__27 Subst="MSub1" W1=W mm W2=W mm W3=L mm 
-
-W=0.625 mm tune{ 0.3125 mm to 0.9375 mm by 0.0625 mm }
-L=2.5 mm tune{ 1.25 mm to 3.75 mm by 0.25 mm }
-VIAGND:V4  N__22 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
-VIAGND:V5  N__25 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=0.625 mm 
+Port:Term1  V1 0 Num=1 Z=50 Ohm Noise=yes 
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=1.0 GHz Stop=10.0 GHz Step=1.0 MHz 
+SweepPlan: SP1_stim Start=1.0 GHz Stop=100.0 GHz Step=10 MHz 
 
 OutputPlan:SP1_Output \
       Type="Output" \
@@ -41,5 +37,7 @@ OutputPlan:SP1_Output \
 
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
-Port:Term1  V1 N__22 Num=1 Z=50 Ohm Noise=yes 
-Port:Term2  N__26 N__25 Num=2 Z=50 Ohm Noise=yes 
+
+W=0.625 mm tune{ 0.3125 mm to 0.9375 mm by 0.0625 mm }
+L=2.5 mm tune{ 1.25 mm to 3.75 mm by 0.25 mm }
+Port:Term2  N__26 0 Num=2 Z=50 Ohm Noise=yes 

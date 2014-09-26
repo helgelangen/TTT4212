@@ -1,5 +1,5 @@
 
-SP SP1[1] <SemesterProject_2014_lib:Bias_filter:schematic>   freq=(1 GHz->10 GHz)
+SP SP1[1] <SemesterProject_2014_lib:Bias_filter:schematic>   freq=(1 GHz->100 GHz)
 Warning detected by hpeesofsim during SP analysis 'SP1'.
     UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.004800) for 'W' in `Gap3'
 
@@ -33,11 +33,11 @@ Warning detected by hpeesofsim during SP analysis 'SP1'.
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-    User time                 =     0.93 seconds.
-    System time               =     0.14 seconds.
-    Total CPU time            =     1.07 seconds.
-    Simulation stopwatch time =     0.89 seconds.
-    Total stopwatch time      =     1.09 seconds.
+    User time                 =     0.98 seconds.
+    System time               =     0.15 seconds.
+    Total CPU time            =     1.12 seconds.
+    Simulation stopwatch time =     0.93 seconds.
+    Total stopwatch time      =     1.13 seconds.
 
     Physical memory used: 79.8 MBytes.
     Incremental virtual memory (data only) used:  18.3 MBytes.
