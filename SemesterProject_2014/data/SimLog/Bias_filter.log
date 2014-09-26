@@ -1,43 +1,43 @@
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with only one device attached (topology corrected): 1
 
-SP SP1[1] <SemesterProject_2014_lib:Bias_filter:schematic>   freq=(1 GHz->100 GHz)
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.004800) for 'W' in `Gap3'
 
+SP SP1[1] <SemesterProject_2014_lib:Bias_filter:schematic>   freq=(1 GHz->1 THz)
 Warning detected by hpeesofsim during SP analysis 'SP1'.
     UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap3'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.004800) for 'W' in `Gap2'
 
 Warning detected by hpeesofsim during SP analysis 'SP1'.
     UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap2'
 
 Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.004800) for 'W' in `Gap1'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
     UserValue(0.000250) < MinRecommendValue(0.000320) for 'S' in `Gap1'
 
 Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.000001) < MinRecommendValue(0.000016) OR UserValue > MaxRecommendValue(0.160000) for 'W' in `TL2'
+    UserValue(0.000003) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.016000) for 'W3' in `Tee3'
 
 Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.000001) < MinRecommendValue(0.000016) OR UserValue > MaxRecommendValue(0.160000) for 'W' in `TL1'
+    UserValue(1216.000000) > MaxRecommendValue(5.000000) for 'Wlargest/Wsmallest' in `Tee3'
 
 Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.016000) for 'W1' in `Tee3'
+    UserValue(0.000003) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.016000) for 'W3' in `Tee2'
 
 Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.000001) < MinRecommendValue(0.000160) OR UserValue > MaxRecommendValue(0.016000) for 'W2' in `Tee3'
+    UserValue(1216.000000) > MaxRecommendValue(5.000000) for 'Wlargest/Wsmallest' in `Tee2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.390625) < MinRecommendValue(1.000000) OR UserValue > MaxRecommendValue(2.200000) for 'W/H' in `V3'
 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-    User time                 =     0.98 seconds.
-    System time               =     0.15 seconds.
-    Total CPU time            =     1.12 seconds.
-    Simulation stopwatch time =     0.93 seconds.
-    Total stopwatch time      =     1.13 seconds.
+    User time                 =     1.39 seconds.
+    System time               =     0.22 seconds.
+    Total CPU time            =     1.61 seconds.
+    Simulation stopwatch time =     1.43 seconds.
+    Total stopwatch time      =     1.63 seconds.
 
     Physical memory used: 79.8 MBytes.
     Incremental virtual memory (data only) used:  18.3 MBytes.
