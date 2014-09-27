@@ -1,0 +1,34 @@
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with only one device attached (topology corrected): 2
+
+
+SP SP1[1] <MyLibrary1_lib:Drain_filter:schematic>   freq=(1 GHz->10 GHz)
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000300) < MinRecommendValue(0.000320) OR UserValue > MaxRecommendValue(0.009600) for 'W' in `Corn4'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000300) < MinRecommendValue(0.000320) OR UserValue > MaxRecommendValue(0.009600) for 'W' in `Corn3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000300) < MinRecommendValue(0.000320) OR UserValue > MaxRecommendValue(0.009600) for 'W' in `Corn2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.000300) < MinRecommendValue(0.000320) OR UserValue > MaxRecommendValue(0.009600) for 'W' in `Corn1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V4'
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+Resource usage:
+  Total stopwatch time     =     1.63 seconds.
+

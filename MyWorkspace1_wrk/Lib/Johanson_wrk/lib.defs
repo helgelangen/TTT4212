@@ -1,0 +1,3 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+DEFINE Johanson_lib Johanson_lib
+ASSIGN Johanson_lib libMode shared

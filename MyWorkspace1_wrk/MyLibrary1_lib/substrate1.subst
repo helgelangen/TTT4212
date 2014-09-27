@@ -1,0 +1,22 @@
+<!DOCTYPE Substrate>
+<SubstrateModel>
+    <stack BAL_TYPE="NONE" BAL_NUM="0">
+        <material materialname="AIR" BAL_TYPE="INHERIT" BAL_NUM="0"/>
+        <interface materialname="PERFECT_CONDUCTOR" BAL_TYPE="INHERIT" thick="0" thickunit="micron" BAL_NUM="0"/>
+        <material materialname="FR_4" BAL_TYPE="INHERIT" thick="10" thickunit="mil" BAL_NUM="0"/>
+        <interface materialname="" BAL_TYPE="INHERIT" thick="0" thickunit="micron" BAL_NUM="0" slot="1"/>
+        <material materialname="FR_4" BAL_TYPE="INHERIT" thick="10" thickunit="mil" BAL_NUM="0"/>
+        <interface materialname="" BAL_TYPE="INHERIT" thick="0" thickunit="micron" BAL_NUM="0"/>
+        <material materialname="AIR" BAL_TYPE="INHERIT" BAL_NUM="0"/>
+    </stack>
+    <layers>
+        <layer materialname="Copper" toprough="" pinsOnly="0" bottomrough="" thick="-17" precedence="0" sheet="0" thickunit="micron" layer="16" negative="0" subtype="0" expand="1" index="0"/>
+        <layer materialname="PERFECT_CONDUCTOR" toprough="" pinsOnly="0" bottomrough="" thick="0" precedence="0" sheet="1" thickunit="micron" layer="17" negative="1" subtype="3" expand="0" index="1"/>
+        <layer materialname="Copper" toprough="" pinsOnly="0" bottomrough="" thick="17" precedence="0" sheet="0" thickunit="micron" layer="1" negative="0" subtype="0" expand="1" index="2"/>
+    </layers>
+    <vias>
+        <via materialname="Copper" rough="" index1="1" index2="2" precedence="0" layer="25" subtype="0"/>
+        <via materialname="PERFECT_CONDUCTOR" rough="" index1="0" index2="1" precedence="0" layer="24" subtype="0"/>
+    </vias>
+    <substrates/>
+</SubstrateModel>

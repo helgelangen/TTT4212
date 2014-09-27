@@ -1,0 +1,54 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary1_lib:Bias_network:schematic"
+define JTCap0603 ( N__5  N__2 ) 
+parameters  C=1 
+C:C7  N__1 N__2 C=0.937*C pF 
+L:L1  N__5 N__1 L=0.647e-9*C^-0.0414 R=3.74*C^-0.195 Ohm Noise=yes  
+C:C10  N__2 0 C=0.0317 pF 
+C:C9  N__5 0 C=0.0317 pF 
+end JTCap0603
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.0 GHz Stop=10 GHz Step=1 MHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+MGAP:Gap4  N__20 N__12 Subst="MSub1" W=W mm S=1.30 mm 
+MGAP:Gap3  N__9 N__17 Subst="MSub1" W=W mm S=0.90 mm 
+MGAP:Gap2  N__16 N__18 Subst="MSub1" W=W mm S=0.90 mm 
+MGAP:Gap1  N__11 N__21 Subst="MSub1" W=W mm S=0.90 mm 
+MTEE_ADS:Tee5  N__22 P1 N__12 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee4  N__19 N__14 N__7 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee3  N__19 N__6 N__17 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee2  N__23 N__13 N__18 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee1  N__24 N__10 N__21 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+JTCap0603:Kap4  N__20 N__12 C=10e6 
+JTCap0603:Kap3  N__11 N__21 C=100 
+JTCap0603:Kap2  N__16 N__18 C=33 
+JTCap0603:Kap1  N__9 N__17 C=10 
+MLIN2:TL9  N__22 N__10 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL8  N__20 N__5 Subst="MSub1" W=W mm L=W mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL7  N__9 N__15 Subst="MSub1" W=W mm L=W mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL6  N__16 N__8 Subst="MSub1" W=W mm L=W mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL5  N__11 N__4 Subst="MSub1" W=W mm L=W mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL3  N__7 P2 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL2  N__23 N__6 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL1  N__24 N__13 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+VIAGND:V4  N__5 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm 
+VIAGND:V3  N__15 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm 
+VIAGND:V2  N__8 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm 
+VIAGND:V1  N__4 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm 
+
+W=3
+SW=(L-(4*W))/3
+L=16 tune{ 8.5 to 25.5 by 1.7 }
+MLOC2:TL4  N__14 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
