@@ -1,24 +1,42 @@
-Warning detected by hpeesofsim during netlist flattening.
-    Short `I__0.PinShort__P3' is shorted.
 
-Warning detected by hpeesofsim during netlist flattening.
-    Short `I__0.PinShort__P4' is shorted.
+SP SP1[1] <MyLibrary1_lib:Amp_2GHz:schematic>   freq=(2 GHz->8 GHz)
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__2.V1'
 
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__2.V2'
 
-SP SP1[1] <MyLibrary1_lib:Amp_2GHz:schematic>   freq=(1 GHz->10 GHz)
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Warning detected by hpeesofsim during SP analysis `SP1'.
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__2.V3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__2.V4'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__1.V1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__1.V2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__1.V3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__1.V4'
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Warning detected by hpeesofsim during SP analysis `SP1'.
     Data in the Touchstone file `/home/lars-arne/Documents/TTT4212/git/MyWorkspace1_wrk/Lib/CGH40010F_Idq_500mA.s2p'
     does not cover the requested value of `freq'.
     Therefore, the required data was obtained by extrapolation.
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-    User time                 =     0.76 seconds.
-    System time               =     0.10 seconds.
-    Total CPU time            =     0.86 seconds.
-    Simulation stopwatch time =     0.68 seconds.
-    Total stopwatch time      =     0.88 seconds.
+    User time                 =     2.31 seconds.
+    System time               =     0.32 seconds.
+    Total CPU time            =     2.63 seconds.
+    Simulation stopwatch time =     2.44 seconds.
+    Total stopwatch time      =     2.65 seconds.
 
-    Physical memory used: 85.5 MBytes.
-    Incremental virtual memory (data only) used:  18.7 MBytes.
+    Physical memory used: 86.1 MBytes.
+    Incremental virtual memory (data only) used:  19.2 MBytes.
 

@@ -1,5 +1,5 @@
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary1_lib:Bias_network:schematic"
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary1_lib:Amp_2GHz:schematic"
 define JTCap0603 ( N__5  N__2 ) 
 parameters  C=1 
 C:C7  N__1 N__2 C=0.937*C pF 
@@ -7,20 +7,8 @@ L:L1  N__5 N__1 L=0.647e-9*C^-0.0414 R=3.74*C^-0.195 Ohm Noise=yes
 C:C10  N__2 0 C=0.0317 pF 
 C:C9  N__5 0 C=0.0317 pF 
 end JTCap0603
-S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
-SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
-
-SweepPlan: SP1_stim Start=1.0 GHz Stop=10 GHz Step=1 MHz 
-
-OutputPlan:SP1_Output \
-      Type="Output" \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2
-
-#load "python","LinearCollapse"
-Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+define Bias_network ( P1  P2 ) 
+;parameters 
 model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
 MGAP:Gap4  N__20 N__12 Subst="MSub1" W=W mm S=1.30 mm 
 MGAP:Gap3  N__9 N__17 Subst="MSub1" W=W mm S=0.90 mm 
@@ -50,5 +38,106 @@ VIAGND:V1  N__4 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm
 
 W=3
 SW=(L-(4*W))/3
-L=16 tune{ 8.5 to 25.5 by 1.7 }
+L=16
 MLOC2:TL4  N__14 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+end Bias_network
+define "DC-block_drain" ( P1  P2 ) 
+;parameters 
+JTCap0603:Kap1  P1 P2 C=1 
+model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+MGAP:Gap1  P1 P2 Subst="MSub1" W=W mm S=0.9 mm 
+
+W=3
+SW=(L-(4*W))/3
+L=16
+end "DC-block_drain"
+define "DC-block_gate" ( P1  P2 ) 
+;parameters 
+JTCap0603:Kap1  P1 P2 C=0.5 tune{ 0.5 to 10 by 0.1 } 
+model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+MGAP:Gap1  P1 P2 Subst="MSub1" W=W mm S=0.9 mm 
+
+W=3
+SW=(L-(4*W))/3
+L=16
+end "DC-block_gate"
+define Drain_circuit ( P1  P2 ) 
+;parameters 
+
+W=3
+W1=0.1*W
+S=0.1
+SW=(L-(4*W))/3
+L=16
+model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+MGAP:Gap4  N__20 N__12 Subst="MSub1" W=W mm S=1.30 mm 
+MGAP:Gap3  N__9 N__17 Subst="MSub1" W=W mm S=0.90 mm 
+MGAP:Gap2  N__16 N__18 Subst="MSub1" W=W mm S=0.90 mm 
+MGAP:Gap1  N__11 N__21 Subst="MSub1" W=W mm S=0.90 mm 
+MTEE_ADS:Tee5  N__22 P1 N__12 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee4  N__19 N__14 N__7 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee3  N__19 N__6 N__17 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee2  N__23 N__13 N__18 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee1  N__24 N__10 N__21 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+JTCap0603:Kap4  N__20 N__12 C=10e6 
+JTCap0603:Kap3  N__11 N__21 C=100 
+JTCap0603:Kap2  N__16 N__18 C=33 
+JTCap0603:Kap1  N__9 N__17 C=10 
+MLIN2:TL9  N__22 N__10 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL8  N__20 N__5 Subst="MSub1" W=W mm L=W mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL7  N__9 N__15 Subst="MSub1" W=W mm L=W mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL6  N__16 N__8 Subst="MSub1" W=W mm L=W mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL5  N__11 N__4 Subst="MSub1" W=W mm L=W mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL3  N__7 P2 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL2  N__23 N__6 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL1  N__24 N__13 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+VIAGND:V4  N__5 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm 
+VIAGND:V3  N__15 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm 
+VIAGND:V2  N__8 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm 
+VIAGND:V1  N__4 Subst="MSub1" D=0.375 mm T=0.00375 mm Rho=1.0 W=W mm 
+MLOC2:TL4  N__14 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+end Drain_circuit
+define Transistor ( P1  P2  P3  P4 ) 
+;parameters 
+#uselib "ckt" , "S2P"
+S2P:SNP1  N__0 N__1 0 File="/home/lars-arne/Documents/TTT4212/git/MyWorkspace1_wrk/Lib/CGH40010F_Idq_500mA.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+MTEE_ADS:Tee1  P1 N__0 P3 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee2  P2 N__1 P4 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+
+W=3
+SW=(L-(4*W))/3
+L=16
+end Transistor
+Transistor:I__0  N__17 N__5 N__0 N__10 
+Bias_network:I__1  0 N__0 
+Drain_circuit:I__2  0 N__10 
+"DC-block_drain":I__3  N__5 N__2 
+"DC-block_gate":I__4  N__3 N__17 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=2 GHz Stop=8 GHz Step=1 MHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+Port:Term1  N__1 0 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  N__12 0 Num=2 Z=50 Ohm Noise=yes 
+aele Mu1=mu(S);
+aele MuPrime1=mu_prime(S);
+aele StabFact1=stab_fact(S);
+Short:Ind1  N__1 N__4 Mode=0 SaveCurrent=no
+Short:Ind3  N__2 N__12 Mode=0 SaveCurrent=no
+model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+
+W=3
+SW=(L-(4*W))/3
+L=16
+Short:TL1  N__3 N__4 Mode=0 SaveCurrent=no

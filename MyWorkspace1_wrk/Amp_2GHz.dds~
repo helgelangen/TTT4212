@@ -10,7 +10,7 @@ ddoId = get_new(ddsId, "Object");
 // DataDisplay Object:
 	set(ddoId, "Path", dds_get_exec_path(what_file(0)));
 	set(ddoId, "Name", dds_get_exec_file(what_file(0)));
-	set(ddoId, "FileModifiedDateAndTime", "2014-09-30T12:18:20Z");
+	set(ddoId, "FileModifiedDateAndTime", "2014-09-30T10:05:08Z");
 	set(ddoId, "FileCreatedDateAndTime", "2014-09-30T07:35:43Z");
 	dssId = get(ddoId, "DatasetServer");
 // Default Dataset

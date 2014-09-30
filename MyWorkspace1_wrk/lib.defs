@@ -2,5 +2,5 @@ INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
 INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
 DEFINE MyLibrary1_lib MyLibrary1_lib
 ASSIGN MyLibrary1_lib libMode shared
-INCLUDE $HOME/MyWorkspace1_wrk/Lib/CGH40_r6_converted/lib.defs
-INCLUDE $HOME/MyWorkspace1_wrk/Lib/Johanson_wrk/lib.defs
+INCLUDE Lib/CGH40_r6_converted/lib.defs
+INCLUDE Lib/Johanson_wrk/lib.defs
