@@ -1,5 +1,8 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
-    <Windows/>
+    <Windows>
+        <Schematic width="1600" cell="Stability" view="schematic" height="837" tune="0" y1="-8" x1="-8" lib="MyLibrary1_lib"/>
+        <Schematic width="846" cell="Amp_2GHz" view="schematic" height="500" tune="0" y1="30" x1="30" lib="MyLibrary1_lib"/>
+    </Windows>
     <MainWindowTab tab="1"/>
 </SaveWorkspaceState>

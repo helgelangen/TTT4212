@@ -1,0 +1,56 @@
+Warning detected by hpeesofsim in LinearCollapse '_2_' during analysis.
+    LinearCollapse is disabled since there is 'DC'analysis present.
+
+CT Sweep1[1] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>   VGS=(-1->0)
+
+DC Sweep1[1].DC1[1/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-1  VDS=28
+.
+
+CT Sweep1[1].Sweep2[1/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-1  VDS=28
+
+SP Sweep1[1].Sweep2[1/6].SP1[1/1] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-1 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[2/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-800e-03  VDS=28
+.
+
+CT Sweep1[1].Sweep2[2/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-800e-03  VDS=28
+
+SP Sweep1[1].Sweep2[2/6].SP1[1/1] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-800e-03 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[3/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-600e-03  VDS=28
+.
+
+CT Sweep1[1].Sweep2[3/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-600e-03  VDS=28
+
+SP Sweep1[1].Sweep2[3/6].SP1[1/1] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-600e-03 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[4/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-400e-03  VDS=28
+.
+
+CT Sweep1[1].Sweep2[4/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-400e-03  VDS=28
+
+SP Sweep1[1].Sweep2[4/6].SP1[1/1] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-400e-03 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[5/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-200e-03  VDS=28
+.
+
+CT Sweep1[1].Sweep2[5/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-200e-03  VDS=28
+
+SP Sweep1[1].Sweep2[5/6].SP1[1/1] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=-200e-03 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[6/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=0  VDS=28
+.
+
+CT Sweep1[1].Sweep2[6/6] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=0  VDS=28
+
+SP Sweep1[1].Sweep2[6/6].SP1[1/1] <MyLibrary1_lib:FET_SP_NF_Match_Circ:schematic>  VGS=0 VDS=28  freq=2.4 GHz
+.
+
+Resource usage:
+  Total stopwatch time     =     0.91 seconds.
+

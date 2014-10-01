@@ -1,5 +1,5 @@
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary1_lib:Amp_2GHz:schematic"
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary1_lib:SP_NF_GainMatchK:schematic"
 define JTCap0603 ( N__5  N__2 ) 
 parameters  C=1 
 C:C7  N__1 N__2 C=0.937*C pF 
@@ -41,26 +41,6 @@ SW=(L-(4*W))/3
 L=16
 MLOC2:TL4  N__14 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 end Bias_network
-define "DC-block_drain" ( P1  P2 ) 
-;parameters 
-JTCap0603:Kap1  P1 P2 C=1 
-model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
-MGAP:Gap1  P1 P2 Subst="MSub1" W=W mm S=0.9 mm 
-
-W=3
-SW=(L-(4*W))/3
-L=16
-end "DC-block_drain"
-define "DC-block_gate" ( P1  P2 ) 
-;parameters 
-JTCap0603:Kap1  P1 P2 C=0.5 tune{ 0.5 to 10 by 0.1 } 
-model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
-MGAP:Gap1  P1 P2 Subst="MSub1" W=W mm S=0.9 mm 
-
-W=3
-SW=(L-(4*W))/3
-L=16
-end "DC-block_gate"
 define Drain_circuit ( P1  P2 ) 
 ;parameters 
 
@@ -100,44 +80,45 @@ end Drain_circuit
 define Transistor ( P1  P2  P3  P4 ) 
 ;parameters 
 #uselib "ckt" , "S2P"
-S2P:SNP1  N__0 N__1 0 File="/home/lars-arne/Documents/TTT4212/git/MyWorkspace1_wrk/Lib/CGH40010F_Idq_500mA.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
-MTEE_ADS:Tee1  P1 N__0 P3 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+S2P:SNP1  N__0 N__9 0 File="C:\Users\Lars-Arne\Documents\TTT4212\MyWorkspace1_wrk\Lib\CGH40010F_Idq_500mA.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+MTEE_ADS:Tee1  P1 N__10 P3 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 MTEE_ADS:Tee2  P2 N__1 P4 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
 
 W=3
 SW=(L-(4*W))/3
 L=16
+MLIN2:TL1  N__10 N__0 Subst="MSub1" W=W mm L=2.5 mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL2  N__9 N__1 Subst="MSub1" W=W mm L=2.5 mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 end Transistor
-Transistor:I__0  N__17 N__5 N__0 N__10 
-Bias_network:I__1  0 N__0 
-Drain_circuit:I__2  0 N__10 
-"DC-block_drain":I__3  N__5 N__2 
-"DC-block_gate":I__4  N__3 N__17 
-S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+S_Param:SP1 CalcS=yes CalcGroupDelay=yes GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=2 GHz Stop=8 GHz Step=1 MHz 
+SweepPlan: SP1_stim Start=0.5 GHz Stop=4 GHz Step=0.01 GHz 
 
 OutputPlan:SP1_Output \
       Type="Output" \
       UseEquationNestLevel=yes \
       EquationNestLevel=2 \
+      EquationName[1]="Z0" \
       UseSavedEquationNestLevel=yes \
       SavedEquationNestLevel=2
 
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
-Port:Term1  N__1 0 Num=1 Z=50 Ohm Noise=yes 
-Port:Term2  N__12 0 Num=2 Z=50 Ohm Noise=yes 
-aele Mu1=mu(S);
-aele MuPrime1=mu_prime(S);
-aele StabFact1=stab_fact(S);
-Short:Ind1  N__1 N__4 Mode=0 SaveCurrent=no
-Short:Ind3  N__2 N__12 Mode=0 SaveCurrent=no
-model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
 
-W=3
-SW=(L-(4*W))/3
-L=16
-Short:TL1  N__3 N__4 Mode=0 SaveCurrent=no
+Z0=50
+Port:Term1  N__5 0 Num=1 Z=Z0 Noise=yes 
+Port:Term2  N__6 0 Num=2 Z=Z0 Noise=yes 
+
+Options:Options1 Temp=16.85 Tnom=25 TopologyCheck=yes ForceS_Params=yes V_RelTol=1e-6  \
+I_RelTol=1e-6 GiveAllWarnings=yes MaxWarnings=10 ForceM_Params=yes DC_ReadInitialGuess=no  \
+DC_WriteFinalSolution=no TopologyCheckMessages=no GPU=no doDeltaAC=no ReduceSPort=no  \
+ReduceSPortRatio=0.5 WarnSOA=yes MaxWarnSOA=5 Census=no 
+
+aele mu_load=mu(S);mu_source=mu_prime(S);match_input=sm_gamma1(S);Source_stabcir=s_stab_circle(S,51);Load_stabcir=l_stab_circle(S,51);
+Transistor:I__9  N__1 N__6 N__1 N__6 
+Bias_network:I__4  0 N__8 
+Drain_circuit:I__10  N__3 0 
+R:R1  N__5 N__1 R=500 Ohm Noise=yes 
+C:C1  N__5 N__1 C=1.0 pF 

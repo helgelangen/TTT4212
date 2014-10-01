@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="7" Version="100">
+<ADSWorkspace Revision="9" Version="100">
     <Workspace Name="">
         <Library Name="ads_standard_layers_ic" />
         <Library Name="ads_schematic_layers_ic" />
@@ -83,5 +83,18 @@
         <Cell Name="MyLibrary1_lib:DC-block(V0.1)" />
         <Cell Name="MyLibrary1_lib:DC-block_drain" />
         <Cell Name="MyLibrary1_lib:DC-block_gate" />
+        <Cell Name="MyLibrary1_lib:cell_2" />
+        <Data_Display Name="Amp_2GHz.dds" />
+        <ConfigFile Name="dds.cfg" />
+        <ConfigFile Name="linecalc.cfg" />
+        <Dataset Name="Amp_2GHz.ds" />
+        <Cell Name="MyLibrary1_lib:Stability" />
+        <Cell Name="MyLibrary1_lib:FET_SP_NF_Match_Circ" />
+        <Cell Name="MyLibrary1_lib:fet_81xp" />
+        <Data_Display Name="FET_SP_NF_Match_Circ.dds" />
+        <Dataset Name="FET_SP_NF_Match_Circ.ds" />
+        <Dataset Name="SP_NF_GainMatchK.ds" />
+        <Cell Name="MyLibrary1_lib:amp_stable" />
+        <Data_Display Name="amp_stable.dds" />
     </Workspace>
 </ADSWorkspace>
