@@ -1,0 +1,31 @@
+
+SP SP1[1] <MyLibrary1_lib:amp_stable:schematic>   freq=(500 MHz->4 GHz)
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V4'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__4.V1'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__4.V2'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__4.V3'
+
+Warning detected by hpeesofsim during SP analysis 'SP1'.
+    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__4.V4'
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+Resource usage:
+  Total stopwatch time     =     2.61 seconds.
+
