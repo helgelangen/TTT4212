@@ -1,5 +1,5 @@
 
-SP SP1[1] <MyLibrary1_lib:Stable_amp:schematic>   freq=(500 kHz->500 MHz)
+SP SP1[1] <MyLibrary1_lib:Stable_amp:schematic>   freq=(0 Hz->6 GHz)
 Warning detected by hpeesofsim during SP analysis 'SP1'.
     UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V1'
 
@@ -31,5 +31,5 @@ Warning detected by hpeesofsim during SP analysis `SP1'.
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-  Total stopwatch time     =    19.96 seconds.
+  Total stopwatch time     =     6.08 seconds.
 

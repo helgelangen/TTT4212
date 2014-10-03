@@ -1,3 +1,9 @@
+Warning detected by hpeesofsim during netlist flattening.
+    Capacitor `Ind1.C3' is shorted.
+
+Warning detected by hpeesofsim during netlist flattening.
+    Capacitor `Ind2.C3' is shorted.
+
 Warning detected by hpeesofsim in topology check during circuit set up.
     Number of nodes with only one device attached (topology corrected): 2
 
