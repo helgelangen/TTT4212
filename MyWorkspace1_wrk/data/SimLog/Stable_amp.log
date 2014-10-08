@@ -1,35 +1,16 @@
+Warning detected by hpeesofsim during netlist flattening.
+    Resistor `I__9.X1.X2.R2' is shorted.
 
-SP SP1[1] <MyLibrary1_lib:Stable_amp:schematic>   freq=(0 Hz->6 GHz)
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V1'
+Warning detected by hpeesofsim during netlist flattening.
+    Capacitor `I__9.X1.X2.C8' is shorted.
 
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V2'
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with no DC path to ground (topology corrected): 1
 
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V3'
 
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__10.V4'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__4.V1'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__4.V2'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__4.V3'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `I__4.V4'
-
-Warning detected by hpeesofsim during SP analysis `SP1'.
-    Data in the Touchstone file `C:/Users/Lars-Arne/Documents/TTT4212/MyWorkspace1_wrk/Lib/CGH40010F_Idq_500mA.s2p'
-    does not cover the requested value of `freq'.
-    Therefore, the required data was obtained by extrapolation.
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SP SP1[1] <MyLibrary1_lib:Stable_amp:schematic>   freq=(1 GHz->6 GHz)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-  Total stopwatch time     =     6.08 seconds.
+  Total stopwatch time     =    21.89 seconds.
 
