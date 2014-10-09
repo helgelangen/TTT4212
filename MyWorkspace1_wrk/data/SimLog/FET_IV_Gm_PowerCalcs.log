@@ -1,0 +1,81 @@
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with no DC path to ground (topology corrected): 1
+
+
+CT Sweep1[1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>   VGS=(-3->-1.5)
+
+DC Sweep1[1].DC1[1/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-3  VDS=28
+.
+
+CT Sweep1[1].Sweep2[1/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-3  VDS=28
+
+AC Sweep1[1].Sweep2[1/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-3 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[2/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.8  VDS=28
+.
+
+CT Sweep1[1].Sweep2[2/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.8  VDS=28
+
+AC Sweep1[1].Sweep2[2/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.8 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[3/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.6  VDS=28
+.
+
+CT Sweep1[1].Sweep2[3/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.6  VDS=28
+
+AC Sweep1[1].Sweep2[3/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.6 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[4/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.4  VDS=28
+.
+
+CT Sweep1[1].Sweep2[4/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.4  VDS=28
+
+AC Sweep1[1].Sweep2[4/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.4 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[5/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.2  VDS=28
+.
+
+CT Sweep1[1].Sweep2[5/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.2  VDS=28
+
+AC Sweep1[1].Sweep2[5/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2.2 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[6/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2  VDS=28
+.
+
+CT Sweep1[1].Sweep2[6/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2  VDS=28
+
+AC Sweep1[1].Sweep2[6/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-2 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[7/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.8  VDS=28
+.
+
+CT Sweep1[1].Sweep2[7/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.8  VDS=28
+
+AC Sweep1[1].Sweep2[7/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.8 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[8/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.6  VDS=28
+.
+
+CT Sweep1[1].Sweep2[8/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.6  VDS=28
+
+AC Sweep1[1].Sweep2[8/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.6 VDS=28  freq=2.4 GHz
+.
+
+DC Sweep1[1].DC1[9/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.5  VDS=28
+.
+
+CT Sweep1[1].Sweep2[9/9] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.5  VDS=28
+
+AC Sweep1[1].Sweep2[9/9].AC1[1/1] <MyLibrary1_lib:FET_IV_Gm_PowerCalcs:schematic>  VGS=-1.5 VDS=28  freq=2.4 GHz
+.
+
+Resource usage:
+  Total stopwatch time     =     0.97 seconds.
+
