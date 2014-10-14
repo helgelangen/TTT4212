@@ -3,20 +3,8 @@ Warning detected by hpeesofsim in topology check during circuit set up.
 
 
 SP SP1[1] <MyLibrary1_lib:Bias_network:schematic>   freq=(100 MHz->6 GHz)
-.Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V1'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V2'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V3'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(0.001600) < MinRecommendValue(0.000100) OR UserValue > MaxRecommendValue(0.000635) for 'H' in `V4'
-
-...........................................................
+............................................................
 
 Resource usage:
-  Total stopwatch time     =     1.15 seconds.
+  Total stopwatch time     =     0.90 seconds.
 
