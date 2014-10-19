@@ -6,5 +6,5 @@ SP SP1[1] <MyLibrary1_lib:Bias_network:schematic>   freq=(100 MHz->6 GHz)
 ............................................................
 
 Resource usage:
-  Total stopwatch time     =     0.90 seconds.
+  Total stopwatch time     =     0.69 seconds.
 

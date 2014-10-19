@@ -3,14 +3,8 @@ Warning detected by hpeesofsim in topology check during circuit set up.
 
 
 SP SP1[1] <MyLibrary1_lib:Amp:schematic>   freq=(100 MHz->6 GHz)
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(6.000000) > MaxRecommendValue(5.000000) for 'Wlargest/Wsmallest' in `Tee4'
-
-Warning detected by hpeesofsim during SP analysis 'SP1'.
-    UserValue(6.000000) > MaxRecommendValue(5.000000) for 'Wlargest/Wsmallest' in `Tee3'
-
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-  Total stopwatch time     =     2.24 seconds.
+  Total stopwatch time     =     2.09 seconds.
 
