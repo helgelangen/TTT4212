@@ -4,4 +4,3 @@ SIM_FILE_PATH=$USER_SIM_FILE_PATH:%USER_SIM_FILE_PATH:$DE_SIM_FILE_PATH:%DE_SIM_
 DESIGN_KIT_MODEL_PATH=C:\Users\Lars-Arne\Documents\TTT4212\MyWorkspace1_wrk\Lib\CGH40_r6_converted\bin\win32_64_VS2010
 DESIGN_KIT_VERILOGA_PATH=C:\Users\Lars-Arne\Documents\TTT4212\MyWorkspace1_wrk\Lib\CGH40_r6_converted\veriloga
 DESIGN_KIT_SIM_FILE_PATH=C:\Users\Lars-Arne\Documents\TTT4212\MyWorkspace1_wrk\Lib\CGH40_r6_converted\circuit\data;C:\Users\Lars-Arne\Documents\TTT4212\MyWorkspace1_wrk\Lib\CGH40_r6_converted\circuit\models
-DKIT_ADSLIBCONFIG_PATH=C:\Users\Lars-Arne\Documents\TTT4212\MyWorkspace1_wrk

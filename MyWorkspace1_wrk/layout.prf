@@ -52,12 +52,12 @@ entryMode 0
 rotationIncrement 90.000000
 gridSnapX 0.100000
 gridSnapY 0.100000
-gridDisplayX 2
-gridDisplayY 2
+gridDisplayX 1
+gridDisplayY 1
 gridDisplayOn 1
 gridDisplaySameXY 1
-majorGridDisplayX 5
-majorGridDisplayY 5
+majorGridDisplayX 100
+majorGridDisplayY 100
 majorGridDisplayOn 1
 gridDisplayMode 0
 gridSnapOn 1

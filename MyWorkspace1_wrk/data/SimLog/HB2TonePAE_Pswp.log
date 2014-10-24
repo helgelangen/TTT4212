@@ -1,0 +1,319 @@
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with no DC path to ground (topology corrected): 1
+
+
+HB HB1[1] <MyLibrary1_lib:HB2TonePAE_Pswp:schematic>   RFpower=(0->33)
+    Number of tones:   2.
+    Number of frequencies:   57.
+    Number of time samples:  256.
+    Number of HB equations (problem size): 25086.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: Krylov (GS_GMRES).
+    Preconditioner: DCP.
+    The general solver is used for HB Krylov preconditioning.
+    RFpower=0              0.00% 1/28
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	83.7857 mA  	100.0             
+1 	2.18575 mA  	100.0            	  1	1.510e-02   
+2 	120.648 uA  	100.0            	  1	4.730e-02   
+3 	103.018 nA  	100.0            	  2	3.550e-04   
+4 	29.2083 pA  	100.0	44.1719 nV  	  3	4.756e-05   
+    RFpower=2.5            7.58% 2/28
+0 	2.98665 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	65.1953 mA  	100.0            	  1	5.674e-02   
+2 	2.26694 mA  	100.0            	  1	2.038e-02   
+        Damping de-activated.
+3 	4.33933 uA  	100.0            	  2	8.263e-04   
+4 	626.106 pA  	100.0            	  3	1.287e-04   
+5 	21.8279 pA  	100.0	281.928 pV  	  3	9.123e-05   
+
+    RFpower=5             15.15% 3/28
+0 	3.98276 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	116.928 mA  	100.0            	  1	7.553e-02   
+2 	5.45141 mA  	100.0            	  1	2.765e-02   
+3 	19.6631 uA  	100.0            	  2	1.555e-03   
+        Damping de-activated.
+4 	6.52876 nA  	100.0            	  3	3.077e-04   
+5 	21.8279 pA  	100.0	3.32381 nV  	  3	2.442e-04   
+
+    RFpower=7.5           22.73% 4/28
+0 	5.31109 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	32.9397 mA  	100.0            	  2	2.165e-03   
+2 	2.78041 mA  	100.0            	  1	3.981e-02   
+3 	17.9225 uA  	100.0            	  2	4.158e-03   
+        Damping de-activated.
+4 	13.1905 nA  	100.0            	  3	5.661e-04   
+5 	29.1039 pA  	100.0	6.95523 nV  	  3	5.958e-04   
+
+    RFpower=10            30.30% 5/28
+0 	7.08245 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	61.2301 mA  	100.0            	  2	4.028e-03   
+2 	843.667 uA  	100.0            	  2	3.826e-03   
+        Damping de-activated.
+3 	1.8648 uA   	100.0            	  3	2.397e-03   
+4 	517.629 pA  	100.0	900.016 nV  	  4	1.494e-04   
+
+    RFpower=11            33.33% 6/28
+0 	3.4553 mA   	100.0             
+        Newton iteration failed, damping activated.
+1 	26.2837 mA  	100.0            	  2	7.524e-03   
+2 	407.187 uA  	100.0            	  2	8.308e-03   
+        Damping de-activated.
+3 	1.08677 uA  	100.0            	  3	2.154e-03   
+4 	738.988 pA  	100.0	686.007 nV  	  4	3.671e-04   
+
+    RFpower=12            36.36% 7/28
+0 	3.87691 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	35.1277 mA  	100.0            	  2	9.554e-03   
+2 	959.628 uA  	100.0            	  2	1.660e-02   
+        Damping de-activated.
+3 	3.36987 uA  	100.0            	  3	2.734e-03   
+4 	4.6567 nA   	100.0            	  4	8.095e-04   
+5 	14.5524 pA  	100.0	2.30696 nV  	  4	4.704e-04   
+
+    RFpower=13            39.39% 8/28
+0 	4.34996 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	48.2342 mA  	100.0            	  2	1.190e-02   
+2 	2.81176 mA  	100.0            	  2	3.775e-02   
+3 	14.713 uA   	100.0            	  3	3.992e-03   
+        Damping de-activated.
+4 	5.88688 nA  	100.0            	  5	1.638e-04   
+5 	15.6931 pA  	100.0	1.58056 nV  	  5	2.919e-04   
+
+    RFpower=14            42.42% 9/28
+0 	4.88074 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	73.269 mA   	100.0            	  2	1.439e-02   
+2 	2.0621 mA   	100.0            	  3	1.123e-02   
+3 	10.9218 uA  	100.0            	  3	4.662e-03   
+        Damping de-activated.
+4 	7.5853 nA   	100.0            	  5	5.947e-04   
+5 	29.1043 pA  	100.0	3.78051 nV  	  5	4.625e-04   
+
+    RFpower=15            45.45% 10/28
+0 	5.47628 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	157.466 mA  	100.0            	  2	1.733e-02   
+2 	8.2846 mA   	100.0            	  3	2.532e-02   
+3 	28.5258 uA  	100.0            	  4	3.186e-03   
+        Damping de-activated.
+4 	21.6567 nA  	100.0            	  5	7.072e-04   
+5 	21.8279 pA  	100.0	25.059 nV   	  6	4.660e-04   
+
+    RFpower=16            48.48% 11/28
+0 	6.14449 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	406.969 mA  	100.0            	  2	2.604e-02   
+2 	26.2028 mA  	100.0            	  3	3.920e-02   
+3 	114.997 uA  	100.0            	  5	3.224e-03   
+        Damping de-activated.
+4 	46.8875 nA  	100.0            	  7	2.482e-04   
+5 	21.8284 pA  	100.0	28.3277 nV  	  7	5.631e-04   
+
+    RFpower=17            51.52% 12/28
+0 	6.89423 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	599.464 mA  	100.0            	  2	5.022e-02   
+2 	24.0532 mA  	100.0            	  4	1.479e-02   
+3 	137.771 uA  	100.0            	  5	4.301e-03   
+        Damping de-activated.
+4 	87.2775 nA  	100.0            	  7	6.418e-04   
+5 	65.0767 pA  	100.0	62.9248 nV  	  7	8.206e-04   
+
+    RFpower=18            54.55% 13/28
+0 	7.73545 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	721.367 mA  	100.0            	  2	6.019e-02   
+2 	31.6127 mA  	100.0            	  4	2.652e-02   
+3 	77.384 uA   	100.0            	  6	2.516e-03   
+        Damping de-activated.
+4 	119.527 nA  	100.0            	  7	8.986e-04   
+5 	35.9788 pA  	100.0	72.7462 nV  	  8	3.909e-04   
+
+    RFpower=19            57.58% 14/28
+0 	8.67932 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	828.415 mA  	100.0            	  2	6.024e-02   
+2 	37.7465 mA  	100.0            	  4	4.040e-02   
+3 	201.839 uA  	100.0            	  6	3.647e-03   
+        Damping de-activated.
+4 	108.683 nA  	100.0            	  8	5.033e-04   
+5 	66.5887 pA  	100.0	97.3295 nV  	  8	7.798e-04   
+
+    RFpower=20            60.61% 15/28
+0 	9.73835 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	892.064 mA  	100.0            	  2	5.945e-02   
+2 	32.601 mA   	100.0            	  5	2.650e-02   
+3 	75.7447 uA  	100.0            	  7	1.218e-03   
+        Damping de-activated.
+4 	31.3535 nA  	100.0            	  9	4.128e-04   
+5 	46.2224 pA  	100.0	31.9542 nV  	  9	3.604e-04   
+
+    RFpower=21            63.64% 16/28
+0 	10.9266 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.02836 A   	100.0            	  2	6.188e-02   
+2 	62.2816 mA  	100.0            	  5	6.088e-02   
+3 	224.445 uA  	100.0            	  8	1.855e-03   
+        Damping de-activated.
+4 	132.107 nA  	100.0            	 10	7.517e-04   
+5 	103.922 pA  	100.0	192.58 nV   	 10	5.310e-04   
+
+    RFpower=22            66.67% 17/28
+0 	12.2599 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.09053 A   	100.0            	  3	5.609e-02   
+2 	95.9389 mA  	100.0            	  6	5.120e-02   
+3 	1.35287 mA  	100.0            	  9	4.187e-03   
+        Damping de-activated.
+4 	2.17593 uA  	100.0            	 11	8.560e-04   
+5 	1.15241 nA  	100.0	1.52478 uV  	 12	9.577e-04   
+
+    RFpower=23            69.70% 18/28
+0 	13.7558 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.1204 A    	100.0            	  4	5.737e-02   
+2 	85.491 mA   	100.0            	  8	4.766e-02   
+3 	1.96323 mA  	100.0            	 10	4.703e-03   
+        Damping de-activated.
+4 	1.09682 uA  	100.0            	 15	3.279e-04   
+5 	965.489 pA  	100.0	731.355 nV  	 15	9.756e-04   
+
+    RFpower=24            72.73% 19/28
+0 	15.4342 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.68681 A   	100.0            	  4	8.281e-02   
+2 	131.412 mA  	100.0            	  9	6.902e-02   
+3 	1.71322 mA  	100.0            	 14	5.948e-03   
+        Damping de-activated.
+4 	3.80215 uA  	100.0            	 17	8.880e-04   
+5 	1.31274 nA  	100.0	2.85729 uV  	 19	5.663e-04   
+
+    RFpower=25            75.76% 20/28
+0 	17.3175 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.51451 A   	100.0            	  5	8.075e-02   
+2 	174.025 mA  	100.0            	 10	7.236e-02   
+3 	2.91782 mA  	100.0            	 17	7.994e-03   
+        Damping de-activated.
+4 	2.8999 uA   	100.0            	 22	8.386e-04   
+5 	1.16457 nA  	100.0	2.64797 uV  	 23	7.238e-04   
+
+    RFpower=26            78.79% 21/28
+0 	19.4306 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.45754 A   	100.0            	  6	9.217e-02   
+2 	147.183 mA  	100.0            	 10	8.605e-02   
+3 	2.18279 mA  	100.0            	 20	7.281e-03   
+        Damping de-activated.
+4 	2.16713 uA  	100.0            	 27	8.507e-04   
+5 	1.7475 nA   	100.0	3.49973 uV  	 27	9.394e-04   
+
+    RFpower=27            81.82% 22/28
+0 	21.8015 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	951.969 mA  	100.0            	  7	8.602e-02   
+2 	126.707 mA  	100.0            	  9	7.892e-02   
+3 	3.64073 mA  	100.0            	 23	1.029e-02   
+        Damping de-activated.
+4 	2.79993 uA  	100.0            	 31	8.946e-04   
+5 	1.86597 nA  	100.0	4.97879 uV  	 32	7.664e-04   
+
+    RFpower=28            84.85% 23/28
+0 	24.4616 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.07445 A   	100.0            	  7	8.110e-02   
+2 	106.474 mA  	100.0            	 10	7.616e-02   
+3 	1.30475 mA  	100.0            	 27	7.223e-03   
+        Damping de-activated.
+4 	1.65338 uA  	100.0            	 35	8.434e-04   
+5 	1.45464 nA  	100.0	3.84522 uV  	 37	8.851e-04   
+
+    RFpower=29            87.88% 24/28
+0 	27.4464 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.60817 A   	100.0            	  7	7.439e-02   
+2 	136.617 mA  	100.0            	 11	7.230e-02   
+3 	1.37617 mA  	100.0            	 30	5.459e-03   
+        Damping de-activated.
+4 	1.91622 uA  	100.0            	 38	9.456e-04   
+5 	2.0897 nA   	100.0	4.32047 uV  	 41	8.530e-04   
+
+    RFpower=30            90.91% 25/28
+0 	30.7954 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.73479 A   	100.0            	  7	7.428e-02   
+2 	230.173 mA  	100.0            	 11	6.630e-02   
+3 	4.07227 mA  	100.0            	 28	1.417e-02   
+        Damping de-activated.
+4 	4.3801 uA   	100.0            	 40	9.926e-04   
+5 	3.05862 nA  	100.0	12.1124 uV  	 43	8.349e-04   
+
+    RFpower=31            93.94% 26/28
+0 	34.553 mA   	100.0             
+        Newton iteration failed, damping activated.
+1 	1.52063 A   	100.0            	  7	8.854e-02   
+2 	446.836 mA  	100.0            	  9	8.304e-02   
+3 	62.2171 mA  	100.0            	 22	5.659e-02   
+4 	863.484 uA  	100.0            	 31	1.442e-02   
+        Damping de-activated.
+5 	1.08434 uA  	100.0            	 41	9.996e-04   
+6 	1.35575 nA  	100.0	2.08762 uV  	 45	9.954e-04   
+
+    RFpower=32            96.97% 27/28
+0 	38.7691 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.18528 A   	100.0            	  8	8.815e-02   
+2 	337.853 mA  	100.0            	  7	8.813e-02   
+3 	66.3379 mA  	100.0            	 23	5.374e-02   
+4 	2.25411 mA  	100.0            	 30	2.321e-02   
+        Damping de-activated.
+5 	1.74278 uA  	100.0            	 44	9.590e-04   
+6 	2.07581 nA  	100.0	5.40067 uV  	 50	9.648e-04   
+
+    RFpower=33           100.00% 28/28
+0 	43.4996 mA  	100.0             
+        Newton iteration failed, damping activated.
+1 	1.13182 A   	100.0            	  8	9.074e-02   
+2 	373.279 mA  	100.0            	 10	8.826e-02   
+3 	58.5582 mA  	100.0            	 23	6.333e-02   
+4 	1.17819 mA  	100.0            	 33	1.761e-02   
+        Damping de-activated.
+5 	1.48398 uA  	100.0            	 48	8.305e-04   
+6 	1.60039 nA  	100.0	3.99267 uV  	 50	1.684e-03   
+
+An HB truncation error may be present.
+o The HB truncation error is due to using a finite order 
+  (number of harmonics) in the representation of the
+  circuit signals.
+
+Waveform                Trunc error             Tolerance
+---------------------------------------------------------
+I__1.X1._net415         2.978e-04       >       1.191e-05
+I__1.X1.X2._net502      2.978e-04       >       1.191e-05
+I__1.X1.X2.vg1          1.609e-05       >       3.121e-06
+I__1.X1.X2.vd1g         1.461e-05       >       1.073e-06
+I__1.X1.X2._net615      1.434e-05       >       1.082e-06
+
+o Number of waveforms violating the HB truncation error check:
+        8 out of 11 waveforms.
+o Estimated max HB truncation error: 2.978e-04 @ waveform I__1.X1._net415 .
+o The maximal HB truncation error estimate is greater than the 
+  achieved tolerance of 1.191e-05 for this waveform.
+o To reduce the error, increase the order (number of harmonics) 
+  and re-simulate.
+
+Resource usage:
+  Total stopwatch time     =    10.11 seconds.
+
