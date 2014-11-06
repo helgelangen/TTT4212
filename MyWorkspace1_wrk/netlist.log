@@ -1,5 +1,5 @@
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary1_lib:HB2TonePAE_Pswp:schematic"
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="MyLibrary1_lib:Amp:schematic"
 define JTCap0603 ( N__5  N__2 ) 
 parameters  C=1 
 C:C7  N__1 N__2 C=0.937*C pF 
@@ -14,7 +14,7 @@ MGAP:Gap4  N__20 N__12 Subst="MSub1" W=W mm S=1.30 mm
 MGAP:Gap3  N__9 N__17 Subst="MSub1" W=W mm S=0.90 mm 
 MGAP:Gap2  N__16 N__18 Subst="MSub1" W=W mm S=0.90 mm 
 MGAP:Gap1  N__11 N__21 Subst="MSub1" W=W mm S=0.90 mm 
-MTEE_ADS:Tee5  N__22 N__29 N__12 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee5  N__22 N__27 N__12 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 MTEE_ADS:Tee4  N__25 N__14 N__8 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 MTEE_ADS:Tee3  N__26 N__6 N__17 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 MTEE_ADS:Tee2  N__23 N__13 N__18 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
@@ -31,7 +31,9 @@ MLIN2:TL5  N__11 0 Subst="MSub1" W=W mm L=5 mm Wall1=2.5e+028 mm Wall2=2.5e+028 
 MLIN2:TL3  N__14 P2 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MLIN2:TL2  N__23 N__6 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MLIN2:TL1  N__24 N__13 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
-MLIN2:TL11  P1 N__29 Subst="MSub1" W=W mm L=16.5 mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MLIN2:TL11  P1 N__29 Subst="MSub1" W=W mm L=11.5 mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MCURVE:Curve2  N__29 N__5 Subst="MSub1" W=W mm Angle=90 Radius=2.5 mm 
+MCURVE:Curve1  N__27 N__5 Subst="MSub1" W=W mm Angle=90 Radius=2.5 mm 
 
 W=1.2 notune{ 1 to 3 by 0.2 }
 SW=(L-(4*W))/3
@@ -52,7 +54,7 @@ MGAP:Gap4  N__20 N__38 Subst="MSub1" W=W mm S=1.30 mm
 MGAP:Gap3  N__9 N__31 Subst="MSub1" W=W mm S=0.90 mm 
 MGAP:Gap2  N__16 N__32 Subst="MSub1" W=W mm S=0.90 mm 
 MGAP:Gap1  N__11 N__21 Subst="MSub1" W=W mm S=0.90 mm 
-MTEE_ADS:Tee5  N__26 N__39 N__38 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
+MTEE_ADS:Tee5  N__33 N__39 N__38 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 MTEE_ADS:Tee4  N__8 N__30 N__7 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 MTEE_ADS:Tee3  N__29 N__14 N__31 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
 MTEE_ADS:Tee2  N__23 N__36 N__32 Subst="MSub1" W1=W mm W2=W mm W3=W mm 
@@ -69,12 +71,12 @@ MLIN2:TL5  N__11 0 Subst="MSub1" W=W mm L=5 mm Wall1=2.5e+028 mm Wall2=2.5e+028 
 MLIN2:TL3  N__8 P2 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MLIN2:TL2  N__36 N__29 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MLIN2:TL1  N__34 N__23 Subst="MSub1" W=W mm L=SW mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
-MLIN2:TL11  P1 N__26 Subst="MSub1" W=W mm L=15.1 mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
+MCURVE:Curve2  N__15 N__5 Subst="MSub1" W=W mm Angle=90 Radius=2 mm 
+MCURVE:Curve1  N__15 N__33 Subst="MSub1" W=W mm Angle=90 Radius=2 mm 
+MLIN2:TL11  P1 N__5 Subst="MSub1" W=W mm L=11.1 mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MLOC2:TL4  N__30 Subst="MSub1" W=W mm L=L mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MLIN2:TL10  N__14 N__7 Subst="MSub1" W=W mm L=3 mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 end Drain_circuit
-define Amp ( P1  P3  P4  P5 ) 
-;parameters 
 MLIN2:TL9  N__33 N__22 Subst="MSub1" W=3 mm L=2 mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0.02 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
 #uselib "CGH40_r6" , "CGH40010F_r6_CGH40_r6"
@@ -82,14 +84,32 @@ model MSub1 MSUB H=1.6 mm Er=4.4 Mur=1 Cond=5.96e7 Hu=1.0e+033 mm T=35 um TanD=0
 R:R2  N__37 N__38 R=20 Ohm notune{ 10 Ohm to 30 Ohm by 2 Ohm }  noopt{ 10 Ohm to 30 Ohm } Noise=yes 
 MTEE_ADS:Tee2  N__10 N__21 N__17 Subst="MSub1" W1=2 mm W2=2 mm W3=1.2 mm 
 Bias_network:I__8  P3 N__37 
+Port:Term1  P1 0 Num=1 Z=50 Ohm Noise=yes 
 MLIN2:TL4  N__3 N__21 Subst="MSub1" W=2 mm L=3.25 mm notune{ 1 mm to 3 mm by 0.2 mm } noopt{ 1 mm to 30 mm } Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MTAPER:Taper4  N__23 N__2 Subst="MSub1" W1=3 mm W2=2 mm L=2.25 mm 
+Port:Term2  P5 0 Num=2 Z=50 Ohm Noise=yes 
 MTEE_ADS:Tee1  N__22 N__23 N__38 Subst="MSub1" W1=3 mm W2=3 mm W3=1.2 mm 
 Drain_circuit:I__9  P4 N__17 
+V_Source:SRC1  P3 0 Type="V_DC" Vdc=-2.6 V SaveCurrent=1 
+V_Source:SRC2  P4 0 Type="V_DC" Vdc=28 V SaveCurrent=1 
 JTCap0603:Kap3  N__25 N__35 C=180 notune{ 0.5 to 200 by 0.1 }  opt{ 0.5 to 180 } 
 JTCap0603:Kap1  N__34 N__33 C=5.6 notune{ 0.5 to 30 by 0.316608 }  noopt{ 0.5 to 30 } 
 R:R1  N__34 N__33 R=110 Ohm noopt{ 10 Ohm to 300 Ohm } Noise=yes 
 JTCap0603:Kap2  N__32 N__27 C=4.7 notune{ 1 to 180 by 0.1 }  opt{ 0.5 to 180 } 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=0.1 GHz Stop=6 GHz Step=10 MHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
 MLIN2:TL5  N__9 N__7 Subst="MSub1" W=6 mm L=13.328 mm tune{ 9.285 mm to 27.855 mm by 0.1 mm } noopt{ 8.94 mm to 26.8 mm } Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MLEF2:TL6  N__26 Subst="MSub1" W=3.5 mm notune{ 0.5 mm to 6 mm by 0.1 mm } L=18.973 mm tune{ 10.885 mm to 32.655 mm by 0.1 mm } noopt{ 9.54 mm to 28.6 mm } Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
 MLIN2:TL16  N__39 N__29 Subst="MSub1" W=WOUT mm L=(10.3-LP) mm Wall1=2.5e+028 mm Wall2=2.5e+028 mm Mod=1 
@@ -126,80 +146,3 @@ MCURVE:Curve1  N__42 N__44 Subst="MSub1" W=WMATCH mm Angle=90 Radius=LRAD mm
 MCURVE:Curve2  N__45 N__40 Subst="MSub1" W=WMATCH mm Angle=90 Radius=LRAD mm 
 MCURVE:Curve3  N__51 N__41 Subst="MSub1" W=WMATCH mm Angle=90 Radius=LRAD mm 
 MCURVE:Curve4  N__43 N__50 Subst="MSub1" W=WMATCH mm Angle=90 Radius=LRAD mm 
-end Amp
-HB:HB1 MaxOrder=Max_IMD_order Freq[1]=RFfreq-fspacing/2 Freq[2]=RFfreq+fspacing/2 Order[1]=7 Order[2]=7 StatusLevel=2 FundOversample=1 \
-Restart=no UseAllSS_Freqs=yes OutputBudgetIV=no UseOutFile=no \
-UseInFile=no SweepVar="RFpower" SweepPlan="Sweep1" OutputPlan="HB1_Output" 
-
-OutputPlan:HB1_Output \
-      Type="Output" \
-      UseNodeNestLevel=yes \
-      NodeNestLevel=2 \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      EquationName[1]="Max_IMD_order" \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2 \
-      UseDeviceCurrentNestLevel=no \
-      DeviceCurrentNestLevel=0 \
-      DeviceCurrentDeviceType="All" \
-      DeviceCurrentSymSyntax=yes \
-      UseCurrentNestLevel=yes \
-      CurrentNestLevel=999 \
-      UseDeviceVoltageNestLevel=no \
-      DeviceVoltageNestLevel=0 \
-      DeviceVoltageDeviceType="All"
-
-Tran:HB1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
-Freq[1]=RFfreq-fspacing/2 Order[1]=7 \
-OutputPlan="HB1_Output"
-
-Component:tahb_HB1 Module="ATAHB" Type="ModelExtractor" \ 
- Tran_Analysis="HB1_tran" HB_Analysis="HB1" 
-
-Amp:I__1  Vinput N__2 N__14 N__10 
-
-global f_bb=0.5*RFfreq
-global f_1 = 1.5*RFfreq
-global f_2 = 2.5*RFfreq
-global f_3 = 3.5*RFfreq
-global f_4 = 4.5*RFfreq
-global Z_load = if freq <= f_bb then Z_l_bb elseif freq <= f_1 then Z_l_fund elseif freq <= f_2 then Z_l_2 elseif freq <= f_3 then Z_l_3 elseif freq <= f_4 then Z_l_4 else Z_l_5 endif
-
-Z0=50
-;Load Impedances=
-Z_l_bb=Z0+j*0
-Z_l_fund = Z0 + j*0
-Z_l_2 = Z0 + j*0
-Z_l_3 = Z0 + j*0
-Z_l_4 = Z0 + j*0
-Z_l_5 = Z0 + j*0
-;Source Impedances=
-Z_s_bb=Z0+j*0
-Z_s_fund = Z0 + j*0
-Z_s_2 = Z0 + j*0
-Z_s_3 = Z0 + j*0
-Z_s_4 = Z0 + j*0
-Z_s_5 = Z0 + j*0
-Z_s = if freq <= f_bb then Z_s_bb elseif freq <= f_1 then Z_s_fund elseif freq <= f_2 then Z_s_2 elseif freq <= f_3 then Z_s_3 elseif freq <= f_4 then Z_s_4 else Z_s_5 endif
-Port:PORT1  N__9 0 Num=1  Z=Z_s  Freq[1]=RFfreq-fspacing/2 Freq[2]=RFfreq+fspacing/2    P[1]=dbmtow(RFpower-3) P[2]=dbmtow(RFpower-3) Noise=yes Pac=polar(dbmtow(0),0) 
-Short:Iload  N__10 Vload Mode=0 SaveCurrent=yes 
-Short:I_input  N__9 Vinput Mode=0 SaveCurrent=yes 
-Port:Term1  Vload 0 Num=2 Z=Z_load Noise=yes 
-
-RFfreq=2.4 GHz
-fspacing=10 MHz
-RFpower=10 _dBm
-Max_IMD_order=7
-Vhigh=28
-Vlow=-2.6
-
-
-SweepPlan:Sweep1 SweepPlan[1]="Sweep1_seg1" \ 
-SweepPlan[2]="Sweep1_seg2" 
-SweepPlan:Sweep1_seg1 Start=0 Stop=10 Step=2.5 
-SweepPlan:Sweep1_seg2 Start=11 Stop=33 Step=1 
-Short:Is_high  Vs_high N__14 Mode=0 SaveCurrent=yes 
-V_Source:G3  Vs_high 0 Type="V_DC" Vdc=Vhigh SaveCurrent=1 
-Short:Is_low  Vs_low N__2 Mode=0 SaveCurrent=yes 
-V_Source:SRC2  Vs_low 0 Type="V_DC" Vdc=Vlow SaveCurrent=1 

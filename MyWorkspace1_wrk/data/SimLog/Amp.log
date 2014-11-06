@@ -2,9 +2,9 @@ Warning detected by hpeesofsim in topology check during circuit set up.
     Number of nodes with no DC path to ground (topology corrected): 1
 
 
-SP SP2[1] <MyLibrary1_lib:Amp:schematic>   freq=(1 Hz->100 MHz)
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SP SP1[1] <MyLibrary1_lib:Amp:schematic>   freq=(100 MHz->6 GHz)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 Resource usage:
-  Total stopwatch time     =     2.50 seconds.
+  Total stopwatch time     =     1.59 seconds.
 

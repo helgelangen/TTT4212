@@ -10,7 +10,7 @@ ddoId = get_new(ddsId, "Object");
 // DataDisplay Object:
 	set(ddoId, "Path", dds_get_exec_path(what_file(0)));
 	set(ddoId, "Name", dds_get_exec_file(what_file(0)));
-	set(ddoId, "FileModifiedDateAndTime", "2012-06-28T23:37:43Z");
+	decl dssId;
 	dssId = get(ddoId, "DatasetServer");
 // Default Dataset
 	set(ddoId, "DefaultDataset", "HB2TonePAE_Pswp");
@@ -25,18 +25,20 @@ ddoId = get_new(ddsId, "Object");
 	set(ddoId, "SnapGridPerDisplayGridY", 2);
 	set(ddoId, "SnapEnabled", 1);
 	set(ddoId, "SnapAutoSetXY", 1);
+decl pageId;
 	set(ddoId, "EnableExpressionUpdates", FALSE);
 pageId = get(ddoId, "CurrentPage");
 if (pageId == NULL) pageId = get_first(ddoId, "Page");
 if (pageId == NULL) pageId = get_new(ddoId, "Page");
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 2006238478);
 // Graphical Object:
-	set(goId0, "Right", 14431);
-	set(goId0, "Bottom", 1642);
-	set(goId0, "Left", 10318);
+	set(goId0, "Right", 14535);
+	set(goId0, "Bottom", 1416);
+	set(goId0, "Left", 10216);
 	set(goId0, "Top", -1694);
 	set(goId0, "Zrot", 0.000000);
 	set(goId0, "Yrot", 0.000000);
@@ -50,15 +52,16 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "FillColor", 0);
 // Plot base...
 	set(goId0, "LegendOnOff", TRUE);
-	set(goId0, "LeftMargin", 682);
-	set(goId0, "RightMargin", 100);
+	set(goId0, "LeftMargin", 784);
+	set(goId0, "RightMargin", 204);
 	set(goId0, "TopMargin", 319);
-	set(goId0, "BottomMargin", 842);
+	set(goId0, "BottomMargin", 616);
 // Plot Title...
 	set(goId0, "Title", "Third-Order IMD, dBc");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 194);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -74,14 +77,15 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 12);
-		 set(axisID, "MaxValue", 28);
-		 set(axisID, "StepSize", 2);
+		 set(axisID, "MinValue", 10);
+		 set(axisID, "MaxValue", 40);
+		 set(axisID, "StepSize", 5);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatEngineering);
 		 set(axisID, "NumDigits", 2);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -97,14 +101,15 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", -55);
-		 set(axisID, "MaxValue", -20);
-		 set(axisID, "StepSize", 5);
+		 set(axisID, "MinValue", -100);
+		 set(axisID, "MaxValue", 0);
+		 set(axisID, "StepSize", 20);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -128,6 +133,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -151,9 +157,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "plot_vs(ThirdOrdIMD_l, Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "plot_vs(ThirdOrdIMD_l, Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 640056155);
@@ -190,9 +200,13 @@ traceID = get_new(goId0, "Trace", "plot_vs(ThirdOrdIMD_l, Pload_dBm)", "X Axis",
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "plot_vs(ThirdOrdIMD_h, Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "plot_vs(ThirdOrdIMD_h, Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 111542781);
@@ -229,9 +243,13 @@ traceID = get_new(goId0, "Trace", "plot_vs(ThirdOrdIMD_h, Pload_dBm)", "X Axis",
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_ThirdOrdIMD_l", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_ThirdOrdIMD_l");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 1596828320);
@@ -268,9 +286,13 @@ traceID = get_new(goId0, "Trace", "Interpolated_ThirdOrdIMD_l", "X Axis", "Y Axi
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_ThirdOrdIMD_h", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_ThirdOrdIMD_h");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 92471106);
@@ -307,16 +329,18 @@ traceID = get_new(goId0, "Trace", "Interpolated_ThirdOrdIMD_h", "X Axis", "Y Axi
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 429871023);
 // Graphical Object:
 	set(goId0, "Right", 9975);
-	set(goId0, "Bottom", 1897);
-	set(goId0, "Left", 5068);
+	set(goId0, "Bottom", 1883);
+	set(goId0, "Left", 5126);
 	set(goId0, "Top", -1694);
 	set(goId0, "Zrot", 0.000000);
 	set(goId0, "Yrot", 0.000000);
@@ -330,15 +354,16 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "FillColor", 0);
 // Plot base...
 	set(goId0, "LegendOnOff", TRUE);
-	set(goId0, "LeftMargin", 682);
+	set(goId0, "LeftMargin", 624);
 	set(goId0, "RightMargin", 100);
 	set(goId0, "TopMargin", 319);
-	set(goId0, "BottomMargin", 1147);
+	set(goId0, "BottomMargin", 1133);
 // Plot Title...
 	set(goId0, "Title", "Zoomed Output Spectrum, dBm");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 194);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -354,14 +379,15 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 849960000);
-		 set(axisID, "MaxValue", 850040000);
-		 set(axisID, "StepSize", 10000);
+		 set(axisID, "MinValue", 2380000000);
+		 set(axisID, "MaxValue", 2420000000);
+		 set(axisID, "StepSize", 5000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatEngineering);
 		 set(axisID, "NumDigits", 4);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -377,14 +403,15 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", -30);
-		 set(axisID, "MaxValue", 30);
+		 set(axisID, "MinValue", 0);
+		 set(axisID, "MaxValue", 40);
 		 set(axisID, "StepSize", 10);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -408,6 +435,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -431,9 +459,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Spectrum_zoomed", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Spectrum_zoomed");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsSpectralTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1446170774);
@@ -470,16 +502,18 @@ traceID = get_new(goId0, "Trace", "Interpolated_Spectrum_zoomed", "xAxis", "yAxi
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 1339136140);
 // Graphical Object:
-	set(goId0, "Right", 10422);
+	set(goId0, "Right", 10372);
 	set(goId0, "Bottom", 5261);
-	set(goId0, "Left", 5101);
+	set(goId0, "Left", 5253);
 	set(goId0, "Top", 1931);
 	set(goId0, "Zrot", 0.000000);
 	set(goId0, "Yrot", 0.000000);
@@ -493,8 +527,8 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "FillColor", 0);
 // Plot base...
 	set(goId0, "LegendOnOff", TRUE);
-	set(goId0, "LeftMargin", 774);
-	set(goId0, "RightMargin", 672);
+	set(goId0, "LeftMargin", 622);
+	set(goId0, "RightMargin", 622);
 	set(goId0, "TopMargin", 319);
 	set(goId0, "BottomMargin", 944);
 // Plot Title...
@@ -502,6 +536,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 194);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -517,14 +552,15 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 12);
-		 set(axisID, "MaxValue", 28);
+		 set(axisID, "MinValue", 14);
+		 set(axisID, "MaxValue", 40);
 		 set(axisID, "StepSize", 2);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatEngineering);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -540,14 +576,15 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 181);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 11);
-		 set(axisID, "MaxValue", 12.4);
-		 set(axisID, "StepSize", 0.2);
+		 set(axisID, "MinValue", 4);
+		 set(axisID, "MaxValue", 16);
+		 set(axisID, "StepSize", 2);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -564,13 +601,14 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "TickFontSize", 181);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 1.4);
-		 set(axisID, "StepSize", 0.2);
+		 set(axisID, "MaxValue", 10);
+		 set(axisID, "StepSize", 2);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -594,9 +632,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(P_gain_transducer,Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(P_gain_transducer,Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 843644658);
@@ -633,9 +675,13 @@ traceID = get_new(goId0, "Trace", "vs(P_gain_transducer,Pload_dBm)", "X Axis", "
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Gain_Compression,Pload_dBm)", "X Axis", "Right Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Gain_Compression,Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Right Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 1617760617);
@@ -672,9 +718,13 @@ traceID = get_new(goId0, "Trace", "vs(Gain_Compression,Pload_dBm)", "X Axis", "R
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Gain", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Gain");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 770164469);
@@ -711,9 +761,13 @@ traceID = get_new(goId0, "Trace", "Interpolated_Gain", "X Axis", "Y Axis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Gain_Comp", "X Axis", "Right Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Gain_Comp");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Right Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 937963854);
@@ -750,16 +804,18 @@ traceID = get_new(goId0, "Trace", "Interpolated_Gain_Comp", "X Axis", "Right Y A
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 1938226069);
 // Graphical Object:
-	set(goId0, "Right", 14431);
-	set(goId0, "Bottom", 5268);
-	set(goId0, "Left", 10318);
+	set(goId0, "Right", 14535);
+	set(goId0, "Bottom", 5042);
+	set(goId0, "Left", 10216);
 	set(goId0, "Top", 1931);
 	set(goId0, "Zrot", 0.000000);
 	set(goId0, "Yrot", 0.000000);
@@ -773,15 +829,16 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "FillColor", 0);
 // Plot base...
 	set(goId0, "LegendOnOff", TRUE);
-	set(goId0, "LeftMargin", 682);
-	set(goId0, "RightMargin", 100);
+	set(goId0, "LeftMargin", 784);
+	set(goId0, "RightMargin", 204);
 	set(goId0, "TopMargin", 319);
-	set(goId0, "BottomMargin", 842);
+	set(goId0, "BottomMargin", 616);
 // Plot Title...
 	set(goId0, "Title", "Fifth-Order IMD, dBc");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 194);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -797,14 +854,15 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 12);
-		 set(axisID, "MaxValue", 28);
-		 set(axisID, "StepSize", 2);
+		 set(axisID, "MinValue", 10);
+		 set(axisID, "MaxValue", 40);
+		 set(axisID, "StepSize", 5);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatEngineering);
 		 set(axisID, "NumDigits", 2);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -820,14 +878,15 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", -75);
-		 set(axisID, "MaxValue", -35);
-		 set(axisID, "StepSize", 5);
+		 set(axisID, "MinValue", -140);
+		 set(axisID, "MaxValue", 0);
+		 set(axisID, "StepSize", 20);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -851,6 +910,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -874,9 +934,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "plot_vs(FifthOrdIMD_l, Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "plot_vs(FifthOrdIMD_l, Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 1155233378);
@@ -913,9 +977,13 @@ traceID = get_new(goId0, "Trace", "plot_vs(FifthOrdIMD_l, Pload_dBm)", "X Axis",
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "plot_vs(FifthOrdIMD_h, Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "plot_vs(FifthOrdIMD_h, Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1935054726);
@@ -952,9 +1020,13 @@ traceID = get_new(goId0, "Trace", "plot_vs(FifthOrdIMD_h, Pload_dBm)", "X Axis",
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_FifthOrdIMD_l", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_FifthOrdIMD_l");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 172480025);
@@ -991,9 +1063,13 @@ traceID = get_new(goId0, "Trace", "Interpolated_FifthOrdIMD_l", "X Axis", "Y Axi
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_FifthOrdIMD_h", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_FifthOrdIMD_h");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 835002323);
@@ -1030,8 +1106,10 @@ traceID = get_new(goId0, "Trace", "Interpolated_FifthOrdIMD_h", "X Axis", "Y Axi
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Listing");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -1070,16 +1148,18 @@ goId0 = get_new(pageId, "Listing");
 	set(goId0, "VerticalScroll", 0);
 	set(goId0, "ShowIndependentData", TRUE);
 	set(goId0, "SuppressTable", TRUE);
+	set(goId0, "AutoSizeListingWidth", FALSE);
 	set(goId0, "TransposeData", FALSE);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 140);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "");
 // Axis...
 	if (axisID != NULL) {
-		 set(axisID, "Uid", 1725336467);
+		 set(axisID, "Uid", 1117740252);
 		 set(axisID, "Color", 104);
 		 set(axisID, "UserLabel", "");
 		 set(axisID, "LabelColor", 0);
@@ -1099,129 +1179,175 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Pload_dBm", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Pload_dBm");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 0);
 		set(traceID, "Uid", 1941650439);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "P_gain_transducer", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "P_gain_transducer");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 208381800);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Gain_Compression", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Gain_Compression");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 776182175);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "TOIoutput_low", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "TOIoutput_low");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 578447346);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "TOIoutput_high", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "TOIoutput_high");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 3);
 		set(traceID, "Uid", 1788153501);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "TOIinput_low", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "TOIinput_low");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 228880576);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "TOIinput_high", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "TOIinput_high");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 17);
 		set(traceID, "Uid", 1481622880);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "FifthOIoutput_low", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "FifthOIoutput_low");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 23);
 		set(traceID, "Uid", 1143811417);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "FifthOIoutput_high", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "FifthOIoutput_high");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 28);
 		set(traceID, "Uid", 1707063213);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "FifthOIinput_low", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "FifthOIinput_low");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 30);
 		set(traceID, "Uid", 1691519964);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "FifthOIinput_high", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "FifthOIinput_high");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 35);
 		set(traceID, "Uid", 1961898801);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Transducer \nPower Gain,\n       dB");
@@ -1246,6 +1372,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Fundamental\nOutput Power,\nBoth Tones,\n   dBm");
@@ -1270,6 +1397,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "  Low and High \nSide Output TOI \n  Points, dBm");
@@ -1294,6 +1422,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 1);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "  Low and High \nSide Input TOI \n  Points, dBm");
@@ -1318,6 +1447,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 1);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "  Low and High \nSide Input 5thOI \n  Points, dBm");
@@ -1342,6 +1472,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 1);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "  Low and High \nSide Output 5thOI \n  Points, dBm");
@@ -1366,6 +1497,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 1);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "  Available\nSource Power,\nBoth Tones,\n    dBm");
@@ -1390,6 +1522,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "   Gain\nCompression\n    dB");
@@ -1414,6 +1547,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Listing");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -1452,25 +1586,32 @@ goId0 = get_new(pageId, "Listing");
 	set(goId0, "VerticalScroll", 0);
 	set(goId0, "ShowIndependentData", TRUE);
 	set(goId0, "SuppressTable", TRUE);
+	set(goId0, "AutoSizeListingWidth", FALSE);
 	set(goId0, "TransposeData", FALSE);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 140);
 	set(goId0, "TitleColor", 0);
+decl traceID;
 traceID = get_new(goId0, "Trace", "indep(mix(Vload[0,::],[{1,0},{0,1}],Mix[0,::]))", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "indep(mix(Vload[0,::],[{1,0},{0,1}],Mix[0,::]))");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 626970161);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Fundamental\nFrequencies");
@@ -1495,6 +1636,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "These become invalid as the amplifier is driven into compression.  If the low and high side \nTOI points do not agree, try increasing the order of each tone and/or the maxorder.");
@@ -1519,6 +1661,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Equations are on the \n\"Equations\" page.");
@@ -1543,6 +1686,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 1);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 42);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Set Desired_Pout_dBm = to desired output power \n(sum of two fundamental tones, only) in dBm.  \nThe gain, gain compression and spectral \ndata will be interpolated to find the values that \ncorrespond to this output power.");
@@ -1567,12 +1711,13 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 1);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 42);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 178259940);
 // Graphical Object:
-	set(goId0, "Right", 4975);
+	set(goId0, "Right", 5432);
 	set(goId0, "Bottom", 4379);
 	set(goId0, "Left", -250);
 	set(goId0, "Top", 3250);
@@ -1589,7 +1734,7 @@ goId0 = get_new(pageId, "Plot");
 // Plot base...
 	set(goId0, "LegendOnOff", TRUE);
 	set(goId0, "LeftMargin", 500);
-	set(goId0, "RightMargin", 100);
+	set(goId0, "RightMargin", 557);
 	set(goId0, "TopMargin", 125);
 	set(goId0, "BottomMargin", 504);
 // Plot Title...
@@ -1597,6 +1742,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 140);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -1612,14 +1758,15 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 13);
-		 set(axisID, "MaxValue", 27);
-		 set(axisID, "StepSize", 1);
+		 set(axisID, "MinValue", 14);
+		 set(axisID, "MaxValue", 40);
+		 set(axisID, "StepSize", 2);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -1643,6 +1790,7 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -1666,6 +1814,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -1689,9 +1838,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Pout_dBm_values,Pout_dBm_values)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Pout_dBm_values,Pout_dBm_values)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 755517131);
@@ -1728,7 +1881,8 @@ traceID = get_new(goId0, "Trace", "vs(Pout_dBm_values,Pout_dBm_values)", "X Axis
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
-markerID = get_new(traceID, "MarkerNew", "Desired_Pout_dBm", "25.00000000000000000000000000000000", 0, "", "", 1, "");
+decl markerID;
+markerID = get_new(traceID, "MarkerNew", "Desired_Pout_dBm", "39.00000000000000000000000000000000", 0, "", "", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
 	set(markerID, "Uid", 1769694559);
@@ -1779,8 +1933,8 @@ markerID = get_new(traceID, "MarkerNew", "Desired_Pout_dBm", "25.000000000000000
 		set(markerID, "MkrReadoutFontSize", 167);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 250);
-		set(markerID, "MkrReadoutRight", 3965);
-		set(markerID, "MkrReadoutBottom", 2424);
+		set(markerID, "MkrReadoutRight", 3961);
+		set(markerID, "MkrReadoutBottom", 2420);
 		set(markerID, "MkrReadoutTop", 1875);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -1793,8 +1947,10 @@ markerID = get_new(traceID, "MarkerNew", "Desired_Pout_dBm", "25.000000000000000
 		set(markerID, "MkrAperturePercentY", 10);
 		set(markerID, "DrawApertureOnOff", FALSE);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Listing");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -1833,16 +1989,18 @@ goId0 = get_new(pageId, "Listing");
 	set(goId0, "VerticalScroll", 0);
 	set(goId0, "ShowIndependentData", FALSE);
 	set(goId0, "SuppressTable", TRUE);
+	set(goId0, "AutoSizeListingWidth", FALSE);
 	set(goId0, "TransposeData", FALSE);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 140);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "");
 // Axis...
 	if (axisID != NULL) {
-		 set(axisID, "Uid", 1960477880);
+		 set(axisID, "Uid", 963016820);
 		 set(axisID, "Color", 104);
 		 set(axisID, "UserLabel", "");
 		 set(axisID, "LabelColor", 0);
@@ -1862,59 +2020,77 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_ThirdOrdIMD_l", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_ThirdOrdIMD_l");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 649385169);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_ThirdOrdIMD_h", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_ThirdOrdIMD_h");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 3);
 		set(traceID, "Uid", 1047212192);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_FifthOrdIMD_l", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_FifthOrdIMD_l");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 1120087544);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_FifthOrdIMD_h", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_FifthOrdIMD_h");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 17);
 		set(traceID, "Uid", 346003601);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 1880432957);
 // Graphical Object:
-	set(goId0, "Right", 5149);
-	set(goId0, "Bottom", 1586);
+	set(goId0, "Right", 4975);
+	set(goId0, "Bottom", 1967);
 	set(goId0, "Left", 199);
 	set(goId0, "Top", -1694);
 	set(goId0, "Zrot", 0.000000);
@@ -1930,14 +2106,15 @@ goId0 = get_new(pageId, "Plot");
 // Plot base...
 	set(goId0, "LegendOnOff", TRUE);
 	set(goId0, "LeftMargin", 926);
-	set(goId0, "RightMargin", 274);
+	set(goId0, "RightMargin", 100);
 	set(goId0, "TopMargin", 319);
-	set(goId0, "BottomMargin", 586);
+	set(goId0, "BottomMargin", 967);
 // Plot Title...
 	set(goId0, "Title", "Interpolated Output Spectrum, dBm");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 194);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -1954,13 +2131,14 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 167);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 6000000000);
-		 set(axisID, "StepSize", 1000000000);
+		 set(axisID, "MaxValue", 18000000000);
+		 set(axisID, "StepSize", 2000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatEngineering);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -1984,6 +2162,7 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "Format", ddsFormatEngineering);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -2007,6 +2186,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -2030,9 +2210,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Spectrum", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Spectrum");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsSpectralTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 816572688);
@@ -2069,8 +2253,10 @@ traceID = get_new(goId0, "Trace", "Interpolated_Spectrum", "X Axis", "Y Axis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Interpolated low- and high-side \n     third-order IMD (dBc)");
@@ -2095,6 +2281,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Interpolated low- and high-side \n     fifth-order IMD (dBc)");
@@ -2119,6 +2306,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Listing");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -2157,16 +2345,18 @@ goId0 = get_new(pageId, "Listing");
 	set(goId0, "VerticalScroll", 0);
 	set(goId0, "ShowIndependentData", TRUE);
 	set(goId0, "SuppressTable", TRUE);
+	set(goId0, "AutoSizeListingWidth", FALSE);
 	set(goId0, "TransposeData", FALSE);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 140);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "");
 // Axis...
 	if (axisID != NULL) {
-		 set(axisID, "Uid", 1646567704);
+		 set(axisID, "Uid", 201389950);
 		 set(axisID, "Color", 104);
 		 set(axisID, "UserLabel", "");
 		 set(axisID, "LabelColor", 0);
@@ -2186,52 +2376,70 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "PAE", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "PAE");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 0);
 		set(traceID, "Uid", 139070377);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Pdc", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Pdc");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1251106005);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Is_h", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Is_h");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 1721072082);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Pdiss", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Pdiss");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 1016570420);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Power-Added\nEfficiency, %");
@@ -2256,6 +2464,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "High Supply\n  Current");
@@ -2280,6 +2489,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "DC Power\nConsumpt.\n Watts");
@@ -2304,6 +2514,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", " Thermal\nDissipation\n Watts");
@@ -2328,6 +2539,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "  Available\nSource Power,\nBoth Tones,\n    dBm");
@@ -2352,6 +2564,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Listing");
 // Base Class Object:
 	set(goId0, "Name", "");
@@ -2390,16 +2603,18 @@ goId0 = get_new(pageId, "Listing");
 	set(goId0, "VerticalScroll", 0);
 	set(goId0, "ShowIndependentData", TRUE);
 	set(goId0, "SuppressTable", FALSE);
+	set(goId0, "AutoSizeListingWidth", FALSE);
 	set(goId0, "TransposeData", FALSE);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 222);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "");
 // Axis...
 	if (axisID != NULL) {
-		 set(axisID, "Uid", 1770427637);
+		 set(axisID, "Uid", 1976717321);
 		 set(axisID, "Color", 104);
 		 set(axisID, "UserLabel", "");
 		 set(axisID, "LabelColor", 0);
@@ -2419,74 +2634,100 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Gain", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Gain");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 979532249);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Gain_Comp", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Gain_Comp");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 581628403);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_PAE", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_PAE");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 1017385790);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Pdc", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Pdc");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 1101676162);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Is_high", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Is_high");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 17);
 		set(traceID, "Uid", 414772606);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Pdiss", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Pdiss");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 3);
 		set(traceID, "Uid", 1984588253);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Transducer \nPower Gain");
@@ -2511,6 +2752,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Fundamental\nOutput Power\n    dBm");
@@ -2535,6 +2777,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Power- Added\nEfficiency,  %");
@@ -2559,6 +2802,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", " High\nSupply \nCurrent");
@@ -2583,6 +2827,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", " Thermal\nDissipation\n Watts");
@@ -2607,6 +2852,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "DC Power\nConsumpt.\n Watts");
@@ -2631,6 +2877,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Gain\nComp. \n (dB)");
@@ -2655,6 +2902,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Interpolated values at @Desired_Pout_dBm dBm output power (approximately)");
@@ -2685,6 +2933,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -2715,6 +2964,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 222);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -2730,14 +2980,15 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 12);
-		 set(axisID, "MaxValue", 28);
+		 set(axisID, "MinValue", 14);
+		 set(axisID, "MaxValue", 40);
 		 set(axisID, "StepSize", 2);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -2754,13 +3005,14 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 		 set(axisID, "TickFontSize", 181);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 40);
-		 set(axisID, "StepSize", 5);
+		 set(axisID, "MaxValue", 50);
+		 set(axisID, "StepSize", 10);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -2776,14 +3028,15 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 167);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 0.1);
-		 set(axisID, "MaxValue", 0.2);
-		 set(axisID, "StepSize", 0.02);
+		 set(axisID, "MinValue", 0.25);
+		 set(axisID, "MaxValue", 0.55);
+		 set(axisID, "StepSize", 0.05);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -2807,9 +3060,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(PAE,Pload_dBm)", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(PAE,Pload_dBm)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1820962111);
@@ -2846,9 +3103,13 @@ traceID = get_new(goId0, "Trace", "vs(PAE,Pload_dBm)", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsStarSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_PAE", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_PAE");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 898701786);
@@ -2885,9 +3146,13 @@ traceID = get_new(goId0, "Trace", "Interpolated_PAE", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(real(Is_high.i[0]),Pload_dBm)", "xAxis", "Right Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(real(Is_high.i[0]),Pload_dBm)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "Right Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 1160534072);
@@ -2924,9 +3189,13 @@ traceID = get_new(goId0, "Trace", "vs(real(Is_high.i[0]),Pload_dBm)", "xAxis", "
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Is_high", "xAxis", "Right Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Is_high");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "Right Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 1647737284);
@@ -2963,8 +3232,10 @@ traceID = get_new(goId0, "Trace", "Interpolated_Is_high", "xAxis", "Right Y Axis
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -2972,7 +3243,7 @@ goId0 = get_new(pageId, "Plot");
 // Graphical Object:
 	set(goId0, "Right", 24477);
 	set(goId0, "Bottom", 1491);
-	set(goId0, "Left", 19825);
+	set(goId0, "Left", 19876);
 	set(goId0, "Top", -1500);
 	set(goId0, "Zrot", 0.000000);
 	set(goId0, "Yrot", 0.000000);
@@ -2986,7 +3257,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "FillColor", 0);
 // Plot base...
 	set(goId0, "LegendOnOff", TRUE);
-	set(goId0, "LeftMargin", 675);
+	set(goId0, "LeftMargin", 624);
 	set(goId0, "RightMargin", 102);
 	set(goId0, "TopMargin", 125);
 	set(goId0, "BottomMargin", 616);
@@ -2995,6 +3266,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 222);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -3010,14 +3282,15 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 12);
-		 set(axisID, "MaxValue", 28);
+		 set(axisID, "MinValue", 14);
+		 set(axisID, "MaxValue", 40);
 		 set(axisID, "StepSize", 2);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -3033,14 +3306,15 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 182);
 		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", 0.5);
-		 set(axisID, "MaxValue", 1.1);
-		 set(axisID, "StepSize", 0.1);
+		 set(axisID, "MinValue", 6);
+		 set(axisID, "MaxValue", 16);
+		 set(axisID, "StepSize", 2);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -3064,6 +3338,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -3087,9 +3362,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Pdc,Pload_dBm)", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Pdc,Pload_dBm)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1244688900);
@@ -3126,9 +3405,13 @@ traceID = get_new(goId0, "Trace", "vs(Pdc,Pload_dBm)", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsStarSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Pdc", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Pdc");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 291294815);
@@ -3165,9 +3448,13 @@ traceID = get_new(goId0, "Trace", "Interpolated_Pdc", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Pdiss,Pload_dBm)", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Pdiss,Pload_dBm)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 927010011);
@@ -3204,9 +3491,13 @@ traceID = get_new(goId0, "Trace", "vs(Pdiss,Pload_dBm)", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Pdiss", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Pdiss");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 1209494078);
@@ -3243,8 +3534,10 @@ traceID = get_new(goId0, "Trace", "Interpolated_Pdiss", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "DC Power Consumption and\nThermal Dissipation, Watts");
@@ -3269,11 +3562,37 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
+goId0 = get_new(pageId, "Equation");
+// Expression...
+	set(goId0, "Expression", "x=write_var(\"test.txt\",\"W\",\"\",\"\\t\",\"f\",6,ThirdOrdIMD_h,ThirdOrdIMD_l,Pload_dBm)");
+	set(goId0, "Font", "Arial For CAE");
+	set(goId0, "FontSize", 167);
+	set(goId0, "TextColor", 0);
+	set(goId0, "FillPattern", -1);
+	set(goId0, "FillColor", 0);
+	set(goId0, "OutlineOnOff", FALSE);
+// Base Class Object:
+	set(goId0, "Name", "");
+	set(goId0, "Uid", 458530486);
+// Graphical Object:
+	set(goId0, "Right", 23270);
+	set(goId0, "Bottom", -4875);
+	set(goId0, "Left", 17000);
+	set(goId0, "Top", -5125);
+	set(goId0, "Zrot", 0.000000);
+	set(goId0, "Yrot", 0.000000);
+	set(goId0, "Xrot", 0.000000);
+	set(goId0, "Status", 0);
+	set(goId0, "LineColor", 0);
+	set(goId0, "LineType", 0);
+	set(goId0, "LineWidth", 7);
 // Base Class Object:
 	set(pageId, "Name", "Plots and Data");
 	set(pageId, "Uid", 462860433);
 	set(pageId, "Invisible", FALSE);
 pageId = get_new(ddoId, "Page");
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Spectrum=10*log(Spectrum_W)+30");
@@ -3287,7 +3606,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 521339605);
 // Graphical Object:
-	set(goId0, "Right", -1560);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 1463);
 	set(goId0, "Left", -4462);
 	set(goId0, "Top", 1213);
@@ -3298,6 +3617,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "P_gain_transducer=Pload_dBm-RFpower");
@@ -3322,6 +3642,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Spectrum_zoomed=mix(Spectrum,tones,Mix)");
@@ -3346,6 +3667,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pload_W1=mix(Spectrum_W,{1,0},Mix)");
@@ -3359,7 +3681,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 142099033);
 // Graphical Object:
-	set(goId0, "Right", -1401);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 2620);
 	set(goId0, "Left", -4521);
 	set(goId0, "Top", 2370);
@@ -3370,6 +3692,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pload_dBm=10*log(Pload_W1 +Pload_W2)+30");
@@ -3383,7 +3706,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 309415145);
 // Graphical Object:
-	set(goId0, "Right", -777);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 3625);
 	set(goId0, "Left", -4515);
 	set(goId0, "Top", 3375);
@@ -3394,6 +3717,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pload_W2=mix(Spectrum_W,{0,1},Mix)");
@@ -3407,7 +3731,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 1625471265);
 // Graphical Object:
-	set(goId0, "Right", -1399);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 2877);
 	set(goId0, "Left", -4519);
 	set(goId0, "Top", 2627);
@@ -3418,6 +3742,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "mix_1=[{1,0},{0,1}]");
@@ -3442,6 +3767,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "mix_3=[{2,-1},{1,0},{0,1},{-1,2}]");
@@ -3466,6 +3792,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "mix_5=[{3,-2},{2,-1},{1,0},{0,1},{-1,2},{2,-3}]");
@@ -3490,6 +3817,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "mix_7=[{4,-3},{3,-2},{2,-1},{1,0},{0,1},{-1,2},{2,-3},{3,-4}]");
@@ -3514,6 +3842,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "tones=if (Max_IMD_order[0]<2) then mix_1 elseif (Max_IMD_order[0]<4) then mix_3 elseif (Max_IMD_order[0]<6) then mix_5 else mix_7");
@@ -3538,6 +3867,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "P5thOrd_low=mix(Spectrum,{3,-2},Mix)");
@@ -3562,6 +3892,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "P5thOrd_high=mix(Spectrum,{-2,3},Mix)");
@@ -3586,6 +3917,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Spectrum_W=0.5*real(Vload*conj(Iload.i))");
@@ -3599,7 +3931,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 1178737008);
 // Graphical Object:
-	set(goId0, "Right", -1156);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 964);
 	set(goId0, "Left", -4482);
 	set(goId0, "Top", 714);
@@ -3610,6 +3942,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Spectrum computes the output power spectrum in dBm.");
@@ -3634,6 +3967,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Spectrum_W computes the output power spectrum in Watts.");
@@ -3658,6 +3992,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pload_W1 is the power delivered to the load, in Watts\nat the low-side fundamental frequency.\nPload_W2 is the power delivered to the load, in Watts,\nat the high-side fundamental frequency.  The third\nargument \"Mix\" must be included in the mix() function  \nbecause Spectrum_W is a calculated variable.");
@@ -3682,6 +4017,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pload_dBm is the power delivered to the load, \nat both fundamental frequencies.");
@@ -3706,6 +4042,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "These equations specify certain mixing tones to display on\nthe \"Zoomed Output Spectrum\" plot, based on the Max_IMD_order\nvariable that is set on the schematic and passed into the \ndataset using the HB controller.");
@@ -3730,6 +4067,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Available Source Power is the swept variable, \nRFpower, on the schematic, in units of dBm.");
@@ -3754,6 +4092,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "P_gain_transducer computes the transducer power gain,\n   the power delivered to the load at the fundamental \n   frequencies - the power available from the source.");
@@ -3778,6 +4117,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Fifth-order IMD products and intercept\npoints are calculated as for the third-order \nones, above, except the mixing indices and\ngeometrical formula are different.");
@@ -3802,6 +4142,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "The \"RF Power Selector\" plot is \nvs([0::sweep_size(RFpower)-1],RFpower)\nSo if there are 10 different RFpower values, then the\npoints that are plotted are (0, lowest RFpower),\n(1, next lowest RFpower), ..., (9, highest RFpower).\nNow, the marker readout is the y-axis value, which is\nthe index corresponding to a particular RFpower level.\nThe plot looks like it does because of the way the \nvertical scale has been set.");
@@ -3826,6 +4167,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Gain Compression is computed as:\nP_gain_transducer-P_gain_transducer[0],\nwhich is the difference between the \ntransducer power gain at each input power\nlevel and the transducer power gain at the\nlowest input power level.");
@@ -3850,6 +4192,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "TOIoutput_low=1.5*Pfund_low-0.5*P3rdOrd_low");
@@ -3874,6 +4217,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "TOIinput_low=TOIoutput_low-P_gain_transducer");
@@ -3898,6 +4242,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "TOIoutput_high=1.5*Pfund_high-0.5*P3rdOrd_high");
@@ -3922,6 +4267,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "TOIinput_high=TOIoutput_high-P_gain_transducer");
@@ -3946,6 +4292,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pfund_low=mix(Spectrum,{1,0},Mix)");
@@ -3959,7 +4306,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 709396268);
 // Graphical Object:
-	set(goId0, "Right", -1694);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 5673);
 	set(goId0, "Left", -4577);
 	set(goId0, "Top", 5423);
@@ -3970,6 +4317,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pfund_high=mix(Spectrum,{0,1},Mix)");
@@ -3983,7 +4331,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 1384401952);
 // Graphical Object:
-	set(goId0, "Right", -1650);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 5983);
 	set(goId0, "Left", -4589);
 	set(goId0, "Top", 5733);
@@ -3994,6 +4342,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "P3rdOrd_low=mix(Spectrum,{2,-1},Mix)");
@@ -4007,7 +4356,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 1942687432);
 // Graphical Object:
-	set(goId0, "Right", -1463);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 6674);
 	set(goId0, "Left", -4571);
 	set(goId0, "Top", 6424);
@@ -4018,6 +4367,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "P3rdOrd_high=mix(Spectrum,{-1,2},Mix)");
@@ -4031,7 +4381,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 1376806266);
 // Graphical Object:
-	set(goId0, "Right", -1400);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 6962);
 	set(goId0, "Left", -4564);
 	set(goId0, "Top", 6712);
@@ -4042,6 +4392,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "ThirdOrdIMD_l=P3rdOrd_low-Pfund_low");
@@ -4055,7 +4406,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 2021783034);
 // Graphical Object:
-	set(goId0, "Right", -1370);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 7779);
 	set(goId0, "Left", -4571);
 	set(goId0, "Top", 7529);
@@ -4066,6 +4417,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "ThirdOrdIMD_h=P3rdOrd_high-Pfund_high");
@@ -4079,7 +4431,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 1986849080);
 // Graphical Object:
-	set(goId0, "Right", -1220);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 8065);
 	set(goId0, "Left", -4577);
 	set(goId0, "Top", 7815);
@@ -4090,6 +4442,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "TOIinput_low and TOIinput_high are the input-referred third-order intercept points, \nin dBm.  These are the signal power levels that would cause the third-order \nintermodulation distortion tones to be at the same level as the \nfundamental tones at the output (assuming the amplifier behaved ideally.)");
@@ -4114,6 +4467,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "TOIoutput_low is the output third-order intercept \npoint, in dBm, calculated geometrically, by extrapolation \nfrom the low side fundamental and third-order intermodulation \ndistortion tones at the output.  TOIoutput_high is computed \nidentically, except using the high-side tones.");
@@ -4138,6 +4492,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pfund_low is the low side fundamental output power, dBm.\nPfund_high is the high side fundamental output power, dBm.");
@@ -4162,6 +4517,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "P3rdOrd_low, is the low side 3rd-order IMD product, dBm.\nP3rdOrd_high is the high side 3rd-order IMD product, dBm.");
@@ -4186,6 +4542,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "ThirdOrdIMD_l is the low side 3rd-order IMD level, dBc.\nThirdOrdIMD_h is the high side 3rd-order IMD level, dBc.");
@@ -4210,6 +4567,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "FifthOIoutput_low=1.25*Pfund_low-0.25*P5thOrd_low");
@@ -4234,6 +4592,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "FifthOIoutput_high=1.25*Pfund_high-0.25*P5thOrd_high");
@@ -4258,6 +4617,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "FifthOIinput_low=FifthOIoutput_low-P_gain_transducer");
@@ -4282,6 +4642,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "FifthOIinput_high=FifthOIoutput_high-P_gain_transducer");
@@ -4306,6 +4667,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "FifthOrdIMD_l=P5thOrd_low-Pfund_low");
@@ -4330,6 +4692,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "FifthOrdIMD_h=P5thOrd_high-Pfund_high");
@@ -4354,6 +4717,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "The \"Output Spectrum\" plot is vs(Spectrum[m1,::],freq[m1,::]),\nwhich is the spectrum corresponding to one \nRFpower level, selected by moving marker m1.");
@@ -4378,6 +4742,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pout_dBm_values=[ceil(min(Pload_dBm))::0.5::ceil(max(Pload_dBm))]");
@@ -4402,6 +4767,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Gain_Comp_values=[0::0.1::3]");
@@ -4415,7 +4781,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 38663878);
 // Graphical Object:
-	set(goId0, "Right", -1946);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 9000);
 	set(goId0, "Left", -4625);
 	set(goId0, "Top", 8750);
@@ -4426,6 +4792,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Gain_Comp=interpolate_y_vs_x(Gain_Compression,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4450,6 +4817,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Gain=interpolate_y_vs_x(P_gain_transducer,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4474,6 +4842,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pout_dBm=Pload_dBm");
@@ -4498,6 +4867,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "interpType=\"spline\"");
@@ -4522,6 +4892,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "interpStepSize=0.05");
@@ -4546,6 +4917,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Set to \"linear\", \"cubic\", or \"spline\".");
@@ -4570,6 +4942,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "P_gain_ref_index=if (!Use_Max_Gain_For_GComp_Reference) then 0 else :: endif ");
@@ -4584,7 +4957,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Uid", 1330152941);
 // Graphical Object:
 	set(goId0, "Right", 7607);
-	set(goId0, "Bottom", -250);
+	set(goId0, "Bottom", 0);
 	set(goId0, "Left", 1000);
 	set(goId0, "Top", -500);
 	set(goId0, "Zrot", 0.000000);
@@ -4594,6 +4967,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Gain_Compression=max(P_gain_transducer[P_gain_ref_index])-P_gain_transducer");
@@ -4618,6 +4992,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Use_Max_Gain_For_GComp_Reference=1");
@@ -4632,7 +5007,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Uid", 858000038);
 // Graphical Object:
 	set(goId0, "Right", 4752);
-	set(goId0, "Bottom", -750);
+	set(goId0, "Bottom", 0);
 	set(goId0, "Left", 1125);
 	set(goId0, "Top", -1000);
 	set(goId0, "Zrot", 0.000000);
@@ -4642,6 +5017,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Box");
 // Base Class Object:
 	set(goId0, "Name", "");
@@ -4661,6 +5037,7 @@ goId0 = get_new(pageId, "Box");
 // Box...
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "If this variable is not equal to 0, then the gain compression \nwill be computed relative to the maximum gain point.  \nHowever, all data on the \"X-dB Gain Compression Data\" page\nis relative to the maximum gain point.");
@@ -4685,6 +5062,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Gain_Comp_Ref_Index=if(!Use_Max_Gain_For_GComp_Reference) then 0 else min_index(Gain_Compression) endif");
@@ -4709,6 +5087,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_ThirdOrdIMD_l=interpolate_y_vs_x(ThirdOrdIMD_l,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4733,6 +5112,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_ThirdOrdIMD_h=interpolate_y_vs_x(ThirdOrdIMD_h,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4757,6 +5137,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_FifthOrdIMD_l=interpolate_y_vs_x(FifthOrdIMD_l,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4781,6 +5162,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_FifthOrdIMD_h=interpolate_y_vs_x(FifthOrdIMD_h,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4805,6 +5187,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Pfund_low=interpolate_y_vs_x(Pfund_low,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4829,6 +5212,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_P3rdOrd_low=interpolate_y_vs_x(P3rdOrd_low,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4853,6 +5237,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_P5thOrd_low=interpolate_y_vs_x(P5thOrd_low,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4877,6 +5262,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Pfund_high=interpolate_y_vs_x(Pfund_high,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4901,6 +5287,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_P3rdOrd_high=interpolate_y_vs_x(P3rdOrd_high,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4925,6 +5312,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_P5thOrd_high=interpolate_y_vs_x(P5thOrd_high,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -4949,6 +5337,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Spectrum=vs(interpolate_swept_data(vs(permute(Spectrum),Pout_dBm),Desired_Pout_dBm,interpStepSize,interpType),All_freqs)");
@@ -4973,6 +5362,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "All_freqs=indep(Spectrum[0,::])");
@@ -4986,7 +5376,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "Name", "");
 	set(goId0, "Uid", 1742643762);
 // Graphical Object:
-	set(goId0, "Right", -1886);
+	set(goId0, "Right", 0);
 	set(goId0, "Bottom", 13500);
 	set(goId0, "Left", -4625);
 	set(goId0, "Top", 13250);
@@ -4997,6 +5387,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Spectrum_zoomed=Interpolated_Spectrum[min_zoom_index::max_zoom_index]");
@@ -5021,6 +5412,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "min_zoom_freq=min(mix(freq[0,::],tones,Mix[0,::]))");
@@ -5045,6 +5437,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "max_zoom_freq=max(mix(freq[0,::],tones,Mix[0,::]))");
@@ -5069,6 +5462,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "min_zoom_index=find_index(All_freqs,min_zoom_freq)");
@@ -5093,6 +5487,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "max_zoom_index=find_index(All_freqs,max_zoom_freq)");
@@ -5117,6 +5512,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Pout=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,Pout_dBm,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -5141,6 +5537,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Gain_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,P_gain_transducer,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -5165,6 +5562,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "ResponseInterpType=\"spline\"");
@@ -5189,6 +5587,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Box");
 // Base Class Object:
 	set(goId0, "Name", "");
@@ -5208,6 +5607,7 @@ goId0 = get_new(pageId, "Box");
 // Box...
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Choices are \"linear\", \"cubic\", or \"spline\"");
@@ -5232,6 +5632,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_ThirdOrdIMD_l_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,ThirdOrdIMD_l,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -5256,6 +5657,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_ThirdOrdIMD_h_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,ThirdOrdIMD_h,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -5280,6 +5682,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_FifthOrdIMD_l_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,FifthOrdIMD_l,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -5304,6 +5707,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_FifthOrdIMD_h_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,FifthOrdIMD_h,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -5328,6 +5732,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Is_h=exists(\"real(Is_high.i[0])\")");
@@ -5352,6 +5757,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Is_l=exists(\"real(Is_low.i[0])\")");
@@ -5376,6 +5782,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Vs_l=exists(\"real(Vs_low[0])\")");
@@ -5400,6 +5807,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Vs_h=exists(\"real(Vs_high[0])\")");
@@ -5424,6 +5832,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pin_W=0.5*real(Vinput*conj(I_input.i))+1e-20");
@@ -5448,6 +5857,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Poutput_total=sum(Spectrum_W)");
@@ -5472,6 +5882,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pavs_W=10**((RFpower-30)/10)");
@@ -5496,6 +5907,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pout_fund_W=Pload_W1+Pload_W2");
@@ -5520,6 +5932,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pdc=Is_h*Vs_h +Is_l*Vs_l +1e-20");
@@ -5544,6 +5957,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pinput_total=sum(Pin_W)+Pdc");
@@ -5568,6 +5982,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pdiss=Pinput_total-Poutput_total");
@@ -5592,6 +6007,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pdc is the DC power consumption in Watts.");
@@ -5616,6 +6032,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pin_W is the power input to the network, at the node\nlabeled \"Vinput\", in Watts, at each frequency.");
@@ -5640,6 +6057,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pinput_total is the total power supplied to the network.");
@@ -5664,6 +6082,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pavs_W is the power available from \nthe source, in Watts.");
@@ -5688,6 +6107,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pout_fund_W is the power delivered to\nthe load at the fundamental freqs., in Watts.");
@@ -5712,6 +6132,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Poutput_total is the total power \nsupplied to the load, in Watts.");
@@ -5736,6 +6157,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Pdiss is the thermal dissipation in the network, in Watts.");
@@ -5760,6 +6182,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Is_l is the DC current in the current probe \"Is_low\", unless\nthat current probe has been deleted from the schematic, \nin which case the exists() function will return 0.  Similarly, \nVs_l is the DC voltage at the node \"Vs_low\", unless this\nnode has been deleted from the schematic, in which case\nVs_l will be set equal to 0.");
@@ -5784,6 +6207,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Pin_fund_W=mix(Pin_W,{0,1},Mix)+mix(Pin_W,{1,0},Mix)");
@@ -5808,6 +6232,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "PAE_0=100*((Pout_fund_W-Pin_fund_W)/Pdc)");
@@ -5832,6 +6257,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 14);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "PAE is the power-added efficiency, in percent.");
@@ -5856,6 +6282,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Line");
 // Base Class Object:
 	set(goId0, "Name", "");
@@ -5877,6 +6304,7 @@ goId0 = get_new(pageId, "Line");
 	set(goId0, "StartY", 6891);
 	set(goId0, "EndX", 16500);
 	set(goId0, "EndY", 7500);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "This power-added efficiency equation that\nuses the power absorbed at the input is\nconsidered to be a better, more accurate figure\nof merit than the one that uses the power\navailable from the source.");
@@ -5901,6 +6329,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_PAE=interpolate_y_vs_x(PAE,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -5925,6 +6354,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Is_high=interpolate_y_vs_x(Is_h,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -5949,6 +6379,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_PAE_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,PAE,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -5973,6 +6404,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Is_high_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,real(Is_high.i[0]),0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -5997,6 +6429,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Pdc=interpolate_y_vs_x(Pdc,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -6021,6 +6454,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Pdc_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,Pdc,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -6045,6 +6479,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Pdiss=interpolate_y_vs_x(Pdiss,Pout_dBm,Desired_Pout_dBm,interpStepSize,interpType)");
@@ -6069,6 +6504,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Interpolated_Pdiss_GC=interpolate_swept_data_XdB(P_gain_transducer,Desired_Gain_Comp,Pdiss,0.005,ResponseInterpType,Allow_extrapolation,0)");
@@ -6093,6 +6529,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "PAE=if(PAE_0<0) then 0 else PAE_0 endif");
@@ -6117,6 +6554,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "This check prevents attempts to plot large negative PAE\nvalues, which make auto-scaled plots look bad.");
@@ -6146,6 +6584,7 @@ goId0 = get_new(pageId, "Text");
 	set(pageId, "Uid", 1782648659);
 	set(pageId, "Invisible", FALSE);
 pageId = get_new(ddoId, "Page");
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "");
@@ -6176,6 +6615,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 140);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6199,6 +6639,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6222,6 +6663,7 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6245,6 +6687,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6268,9 +6711,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Gain_Comp_values,Gain_Comp_values)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Gain_Comp_values,Gain_Comp_values)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 2092541534);
@@ -6307,6 +6754,7 @@ traceID = get_new(goId0, "Trace", "vs(Gain_Comp_values,Gain_Comp_values)", "X Ax
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl markerID;
 markerID = get_new(traceID, "MarkerNew", "Desired_Gain_Comp", "0.50000000000000000000000000000000", 0, "", "", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
@@ -6372,8 +6820,10 @@ markerID = get_new(traceID, "MarkerNew", "Desired_Gain_Comp", "0.500000000000000
 		set(markerID, "MkrAperturePercentY", 10);
 		set(markerID, "DrawApertureOnOff", FALSE);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Set Desired_Gain_Comp = to desired \namount of gain compression.  The data\nwill be interpolated to find the values \nthat correspond to this output power.");
@@ -6398,6 +6848,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 1);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 28);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -6428,6 +6879,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 220);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -6451,6 +6903,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -6474,6 +6927,7 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6497,6 +6951,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6520,9 +6975,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "interp(vs(P_gain_transducer,Pout_dBm),,,0.05)", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "interp(vs(P_gain_transducer,Pout_dBm),,,0.05)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1560332180);
@@ -6559,9 +7018,13 @@ traceID = get_new(goId0, "Trace", "interp(vs(P_gain_transducer,Pout_dBm),,,0.05)
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "interp(vs(Gain_Compression,Pout_dBm),,,0.05)", "xAxis", "Right Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "interp(vs(Gain_Compression,Pout_dBm),,,0.05)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "Right Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 1158686594);
@@ -6598,9 +7061,13 @@ traceID = get_new(goId0, "Trace", "interp(vs(Gain_Compression,Pout_dBm),,,0.05)"
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_Gain_GC[0],Interpolated_Pout[0])", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_Gain_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 2129530181);
@@ -6637,9 +7104,13 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_Gain_GC[0],Interpolated_Pout[
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_Pout[1],Interpolated_Pout[0])", "xAxis", "Right Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_Pout[1],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "Right Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 230509584);
@@ -6676,8 +7147,10 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_Pout[1],Interpolated_Pout[0])
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Equation");
 // Expression...
 	set(goId0, "Expression", "Allow_extrapolation=\"Yes\"");
@@ -6702,6 +7175,7 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Listing");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -6740,36 +7214,47 @@ goId0 = get_new(pageId, "Listing");
 	set(goId0, "VerticalScroll", 0);
 	set(goId0, "ShowIndependentData", FALSE);
 	set(goId0, "SuppressTable", TRUE);
+	set(goId0, "AutoSizeListingWidth", FALSE);
 	set(goId0, "TransposeData", FALSE);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 154);
 	set(goId0, "TitleColor", 0);
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_ThirdOrdIMD_l_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_ThirdOrdIMD_l_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 872069856);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_ThirdOrdIMD_h_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_ThirdOrdIMD_h_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 3);
 		set(traceID, "Uid", 1608537354);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Interpolated low- and high-side \n     third-order IMD (dBc)");
@@ -6794,6 +7279,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Interpolated low- and high-side \n     fifth-order IMD (dBc)");
@@ -6818,6 +7304,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -6848,6 +7335,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 194);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6871,6 +7359,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "Format", ddsFormatEngineering);
 		 set(axisID, "NumDigits", 2);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6894,6 +7383,7 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6917,6 +7407,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -6940,9 +7431,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "plot_vs(ThirdOrdIMD_l, Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "plot_vs(ThirdOrdIMD_l, Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 171600034);
@@ -6979,9 +7474,13 @@ traceID = get_new(goId0, "Trace", "plot_vs(ThirdOrdIMD_l, Pload_dBm)", "X Axis",
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "plot_vs(ThirdOrdIMD_h, Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "plot_vs(ThirdOrdIMD_h, Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 713078002);
@@ -7018,9 +7517,13 @@ traceID = get_new(goId0, "Trace", "plot_vs(ThirdOrdIMD_h, Pload_dBm)", "X Axis",
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_ThirdOrdIMD_l_GC[0],Interpolated_Pout[0])", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_ThirdOrdIMD_l_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 80673915);
@@ -7057,9 +7560,13 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_ThirdOrdIMD_l_GC[0],Interpola
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_ThirdOrdIMD_h_GC[0],Interpolated_Pout[0])", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_ThirdOrdIMD_h_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 1907909566);
@@ -7096,8 +7603,10 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_ThirdOrdIMD_h_GC[0],Interpola
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -7128,6 +7637,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 194);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -7151,6 +7661,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "Format", ddsFormatEngineering);
 		 set(axisID, "NumDigits", 2);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -7174,6 +7685,7 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -7197,6 +7709,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -7220,9 +7733,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "plot_vs(FifthOrdIMD_l, Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "plot_vs(FifthOrdIMD_l, Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 2114770673);
@@ -7259,9 +7776,13 @@ traceID = get_new(goId0, "Trace", "plot_vs(FifthOrdIMD_l, Pload_dBm)", "X Axis",
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "plot_vs(FifthOrdIMD_h, Pload_dBm)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "plot_vs(FifthOrdIMD_h, Pload_dBm)");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 111710733);
@@ -7298,9 +7819,13 @@ traceID = get_new(goId0, "Trace", "plot_vs(FifthOrdIMD_h, Pload_dBm)", "X Axis",
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_FifthOrdIMD_l_GC[0],Interpolated_Pout[0])", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_FifthOrdIMD_l_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 1040166200);
@@ -7337,9 +7862,13 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_FifthOrdIMD_l_GC[0],Interpola
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_FifthOrdIMD_h_GC[0],Interpolated_Pout[0])", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_FifthOrdIMD_h_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "X Axis");
+		set(traceID, "YaxisName", "Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 680061995);
@@ -7376,8 +7905,10 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_FifthOrdIMD_h_GC[0],Interpola
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Listing");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -7416,36 +7947,47 @@ goId0 = get_new(pageId, "Listing");
 	set(goId0, "VerticalScroll", 0);
 	set(goId0, "ShowIndependentData", FALSE);
 	set(goId0, "SuppressTable", TRUE);
+	set(goId0, "AutoSizeListingWidth", FALSE);
 	set(goId0, "TransposeData", FALSE);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 154);
 	set(goId0, "TitleColor", 0);
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_FifthOrdIMD_l_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_FifthOrdIMD_l_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 1875735436);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_FifthOrdIMD_h_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_FifthOrdIMD_h_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 17);
 		set(traceID, "Uid", 389925107);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Interpolated values at @Desired_Gain_Comp dB compression (approximately)");
@@ -7470,6 +8012,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Listing");
 // Base Class Object:
 	set(goId0, "Name", "");
@@ -7508,91 +8051,122 @@ goId0 = get_new(pageId, "Listing");
 	set(goId0, "VerticalScroll", 0);
 	set(goId0, "ShowIndependentData", FALSE);
 	set(goId0, "SuppressTable", FALSE);
+	set(goId0, "AutoSizeListingWidth", FALSE);
 	set(goId0, "TransposeData", FALSE);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 222);
 	set(goId0, "TitleColor", 0);
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Gain_GC[1]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Gain_GC[1]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 272716365);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Pout[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Pout[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 1697049660);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Gain_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Gain_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 6);
 		set(traceID, "Uid", 1676608776);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_PAE_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_PAE_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 1210377696);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Pdc_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Pdc_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 17);
 		set(traceID, "Uid", 1312977159);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Is_high_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Is_high_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 3);
 		set(traceID, "Uid", 2132448317);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "Interpolated_Pdiss_GC[0]", "", "");
 // Text trace:
 	if (traceID != NULL) set(traceID, "ComplexNumberFormat", ddsComplexFormatMagPhase);
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "Interpolated_Pdiss_GC[0]");
+		set(traceID, "XaxisName", "");
+		set(traceID, "YaxisName", "");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 23);
 		set(traceID, "Uid", 2125747283);
 		set(traceID, "UIIndex", 0);
 		set(traceID, "Status", 43008);
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Transducer\nPower Gain\n     (dB)");
@@ -7617,6 +8191,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "      Gain\nCompression\n       (dB)");
@@ -7641,6 +8216,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Output\nPower\n (dBm)");
@@ -7665,6 +8241,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "Power- Added\nEfficiency,  %");
@@ -7689,6 +8266,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", " High\nSupply \nCurrent");
@@ -7713,6 +8291,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", " Thermal\nDissipation\n Watts");
@@ -7737,6 +8316,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "DC Power\nConsumpt.\n Watts");
@@ -7761,6 +8341,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 0);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -7791,6 +8372,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 220);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -7814,6 +8396,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -7837,6 +8420,7 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -7860,6 +8444,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -7883,9 +8468,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Is_h,Pout_dBm)", "xAxis", "Right Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Is_h,Pout_dBm)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "Right Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1780801512);
@@ -7922,9 +8511,13 @@ traceID = get_new(goId0, "Trace", "vs(Is_h,Pout_dBm)", "xAxis", "Right Y Axis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(PAE,Pout_dBm)", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(PAE,Pout_dBm)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 1038537589);
@@ -7961,9 +8554,13 @@ traceID = get_new(goId0, "Trace", "vs(PAE,Pout_dBm)", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_Is_high_GC[0],Interpolated_Pout[0])", "xAxis", "Right Y Axis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_Is_high_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "Right Y Axis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1600561799);
@@ -8000,9 +8597,13 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_Is_high_GC[0],Interpolated_Po
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_PAE_GC[0],Interpolated_Pout[0])", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_PAE_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 491941376);
@@ -8039,8 +8640,10 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_PAE_GC[0],Interpolated_Pout[0
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
+decl goId0;
 goId0 = get_new(pageId, "Text");
 // Text:
 	set(goId0, "String", "DC Power Consumption and\nThermal Dissipation, Watts");
@@ -8065,6 +8668,7 @@ goId0 = get_new(pageId, "Text");
 	set(goId0, "LineColor", 0);
 	set(goId0, "LineType", 0);
 	set(goId0, "LineWidth", 7);
+decl goId0;
 goId0 = get_new(pageId, "Plot");
 // Base Class Object:
 	set(goId0, "Name", "default");
@@ -8095,6 +8699,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "TitleFont", "Arial For CAE");
 	set(goId0, "TitleFontSize", 222);
 	set(goId0, "TitleColor", 0);
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -8118,6 +8723,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "xAxis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 // Axis...
 	if (axisID != NULL) {
@@ -8141,6 +8747,7 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "yAxis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -8164,6 +8771,7 @@ axisID = get_new(goId0, "Axis", ddsRightYaxis, "Right Y Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl axisID;
 axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 // Axis...
 	if (axisID != NULL) {
@@ -8187,9 +8795,13 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Pdc,Pout_dBm)", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Pdc,Pout_dBm)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1321754211);
@@ -8226,9 +8838,13 @@ traceID = get_new(goId0, "Trace", "vs(Pdc,Pout_dBm)", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsStarSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_Pdc_GC[0],Interpolated_Pout[0])", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_Pdc_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 1);
 		set(traceID, "Uid", 1309334977);
@@ -8265,9 +8881,13 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_Pdc_GC[0],Interpolated_Pout[0
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Pdiss,Pout_dBm)", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Pdiss,Pout_dBm)");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 5);
 		set(traceID, "Uid", 1953640468);
@@ -8304,9 +8924,13 @@ traceID = get_new(goId0, "Trace", "vs(Pdiss,Pout_dBm)", "xAxis", "yAxis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+decl traceID;
 traceID = get_new(goId0, "Trace", "vs(Interpolated_Pdiss_GC[0],Interpolated_Pout[0])", "xAxis", "yAxis");
 // Trace:
 	if (traceID != NULL) {
+		set(traceID, "Expression", "vs(Interpolated_Pdiss_GC[0],Interpolated_Pout[0])");
+		set(traceID, "XaxisName", "xAxis");
+		set(traceID, "YaxisName", "yAxis");
 		set(traceID, "TraceType", ddsAutomaticTraceType);
 		set(traceID, "Color", 4);
 		set(traceID, "Uid", 2044516127);
@@ -8343,6 +8967,7 @@ traceID = get_new(goId0, "Trace", "vs(Interpolated_Pdiss_GC[0],Interpolated_Pout
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
+	set(goId0, "PlotLogoHideOnOff", FALSE);
 // Initialize plot
 	set(goId0, "InitPlot", 0);
 // Base Class Object:
@@ -8357,8 +8982,8 @@ ddWinId = get_new(ddsId, "Window");
 	set(ddWinId, "CurrentPage", 462860433);
 	set(ddWinId, "PageViewRect_1643578210", list(-692, 6692, 10397, -1551));
 	set(ddWinId, "PageViewRect_1782648659", list(-5326, 16149, 22092, -2399));
-	set(ddWinId, "PageViewRect_462860433", list(-536, 6339, 17111, -5600));
-	set(ddWinId, "Frame", list(23, 18, 1214, 889));
+	set(ddWinId, "PageViewRect_462860433", list(11066, 1501, 27641, -6206));
+	set(ddWinId, "Frame", list(-8, -8, 1596, 837));
 	set(ddWinId, "ForegroundColor", 0);
 	set(ddWinId, "BackgroundColor", 8);
 	set(ddWinId, "WindowPageOrder", list("Plots and Data","Equations","X-dB Gain Compression Data"));

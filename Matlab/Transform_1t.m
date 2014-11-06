@@ -1,0 +1,58 @@
+clear all
+%load in the different files from measurements
+load('onetone_Gruppe1_2_35GHz.mat');
+power_output2_35=OutputPowerf0;
+load('onetone_Gruppe1_2_45GHz.mat');
+power_output2_45=OutputPowerf0;
+load('onetone_Gruppe1_2_4GHz.mat');
+power_output2_4=OutputPowerf0;
+load('PAdriver_one_tone_400mA_2-3GHz_corrected.mat');
+load('PassiveLosses_2-3GHz.mat')
+
+%Calculate the power out from driver
+driver_output_2_35=(driverOutputPower(4,1:end)+driverOutputPower(5,1:end))./2;
+driver_output_2_45=(driverOutputPower(5,1:end)+driverOutputPower(6,1:end))./2;
+driver_output_2_4=driverOutputPower(5,1:end);
+
+%Calculate the different losses
+Circ_loss_2_35=(CirculatorLoss(4)+CirculatorLoss(5))/2;
+Out_loss_2_35=(OutputLoss(4)+OutputLoss(5))/2;
+%Gain_2_35=power_output2_35-driver_output_2_35-loss_2_35;
+
+Circ_loss_2_45=(CirculatorLoss(5)+CirculatorLoss(6))/2;
+Out_loss_2_45=(OutputLoss(5)+OutputLoss(6))/2;
+%Gain_2_45=power_output2_45-driver_output_2_45-loss_2_45;
+
+Circ_loss_2_4=CirculatorLoss(4);
+Out_loss_2_4=OutputLoss(4);
+%Gain_2_4=power_output2_4-driver_output_2_4-loss_2_4;
+
+%Calculate power in to amplifier
+InputPower_2_35=driver_output_2_35-Circ_loss_2_35;
+InputPower_2_4=driver_output_2_4-Circ_loss_2_4;
+InputPower_2_45=driver_output_2_45-Circ_loss_2_45;
+
+%Calculate power out from amplifier
+OutputPower_2_35=power_output2_35-Out_loss_2_35;
+OutputPower_2_4=power_output2_4-Out_loss_2_4;
+OutputPower_2_45=power_output2_45-Out_loss_2_45;
+
+%Plot Output power vs input power
+plot(InputPower_2_35,OutputPower_2_35,InputPower_2_4,OutputPower_2_4,InputPower_2_45,OutputPower_2_45,[27 27],[0 45],[-8 34],[39 39])
+axis([-8 34 0 42]);
+legend('2.35GHz','2.40GHz','2.45GHz','location','NW');
+xlabel('Input power (dBm)');
+ylabel('Output power (dBm)');
+title('Large-signal power gain');
+grid
+%Calculate PAE
+PAE_2_35=(db2pow(OutputPower_2_35)-db2pow(InputPower_2_35))./(iDrain.*28*1000).*100;
+PAE_2_4=(db2pow(OutputPower_2_4)-db2pow(InputPower_2_4))./(iDrain.*28*1000).*100;
+PAE_2_45=(db2pow(OutputPower_2_45)-db2pow(InputPower_2_45))./(iDrain.*28*1000).*100;
+figure(2)
+plot(InputPower_2_35,PAE_2_35,InputPower_2_4,PAE_2_4,InputPower_2_45,PAE_2_45)
+legend('2.35GHz','2.40GHz','2.45GHz','location','NW');
+xlabel('Input power (dBm)');
+ylabel('PAE (%)');
+title('Power Added Efficiency');
+grid on;
