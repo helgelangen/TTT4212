@@ -1,24 +1,34 @@
 \documentclass[a4paper,english]{scrreprt}
   \usepackage[utf8]{inputenc}
   \usepackage{babel,geometry,amsmath}
-  \usepackage{graphicx}
+  \usepackage{graphicx,afterpage}
   \usepackage[nottoc,numbib]{tocbibind}
+
+  \newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \dotfill}}
+  \newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
 
 \begin{document}
 
   \input{./tex/title}
   \clearpage
 
+  \include{./tex/00_Abstract}
+  \clearpage
+
   \tableofcontents
   \clearpage
 
-  \include{./tex/00_Introduction}
+  \include{./tex/01_Introduction}
 
-  \include{./tex/01_Design}
+  \include{./tex/02_Theory}
 
-  \include{./tex/02_Simulations}
+  \include{./tex/03_Design}
 
-  \include{./tex/03_Measurements}
+  \include{./tex/04_Results}
+
+  \include{./tex/05_Discussion}
+
+  \include{./tex/06_Conclusion}
 
   \include{./tex/09_References}
   
