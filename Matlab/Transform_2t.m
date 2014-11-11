@@ -47,5 +47,10 @@ end
 tdfread('S-param.s2p','\t');
 
 plot(Outputpowers(2,1:end),TOIMDhs(2,1:end),Outputpowers(2,1:end),TOIMDls(2,1:end),[38 38],[-55 -15]);
+title('Third-Order intermodulation distortion (TOIMD)');
+xlabel('Output power (dBm)');
+ylabel('IMD (dBc)');
+legend('TOIMD high','TOIMD low','location','NW');
+grid on;
 
 
