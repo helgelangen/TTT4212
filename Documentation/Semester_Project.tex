@@ -1,8 +1,28 @@
-\documentclass[a4paper,english]{scrreprt}
+\documentclass[a4paper,english,twoside]{scrreprt}
   \usepackage[utf8]{inputenc}
   \usepackage{babel,geometry,amsmath}
-  \usepackage{graphicx,afterpage}
+  \usepackage{graphicx,afterpage,float}
   \usepackage[nottoc,numbib]{tocbibind}
+   \usepackage{fancyhdr}
+  \setlength{\headheight}{13.6pt}
+  \pagestyle{fancy}
+  \renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+  \renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+
+  \fancyhf{}
+  \fancyfoot[LE,RO]{\thepage}
+  \renewcommand{\footrulewidth}{0.4pt}
+  %\renewcommand{\headrulewidth}{0pt} 
+  \fancyhead[RO]{\textit{ \nouppercase{\leftmark}} }
+  \fancyhead[LE]{\textit{ \nouppercase{\rightmark}} }
+
+  \fancypagestyle{plain}{ %
+    \fancyhf{} % remove everything
+    \fancyfoot[LE,RO]{\thepage}
+    \renewcommand{\headrulewidth}{0pt} % remove lines as well
+    %\renewcommand{\footrulewidth}{0pt}
+  }
+
   \renewcommand{\labelitemi}{$-$}
   \newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \dotfill}}
   \newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}

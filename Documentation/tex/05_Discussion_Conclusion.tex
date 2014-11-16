@@ -2,7 +2,7 @@
 
   \section{Fulfillment of requirements}
 	\subsection{Stability}
-	The amplifier was simulated to be unconditionally stable for all frequencies at all source and load impedances except for when the output was presented with a short-circuit to ground. In real life, it was only tested with a 50 Ohm termination on the input and a 50 Ohm dummy load, for which it proved not to oscillate at any frequency seen on the spectrum analyzer. No tendencies to start oscillating was seen when doing both small- and large-signal testing. To our best knowledge, the requirement of stability was fulfilled.
+	The amplifier was simulated to be unconditionally stable for all frequencies at all source and load impedances except for when the output was presented with a short-circuit to ground. In real life, it was only tested with a $50 \Omega$ termination on the input and a $50 \Omega$ dummy load, for which it proved not to oscillate at any frequency seen on the spectrum analyzer. No tendencies to start oscillating was seen when doing both small- and large-signal testing. To our best knowledge, the requirement of stability was fulfilled.
 	\subsection{Small-signal gain and bandwidth}
 	The simulated gain was within the requirement specification with a minimum value of 13.287dBm across the 100 MHz bandwidth. The measured gain was below the required minimum of 13dBm for the frequency range of 2.35 - 2.38 GHz, while it was above the 13dBm limit for the rest of the band of operation. This requirement was hence not fulfilled.
 	\subsection{Large-signal gain}
@@ -11,13 +11,14 @@
 	\subsection{Power added efficiency}
 	The power added efficiency exhibits the same shift in frequency as the gain, with the best performance at 2.45 GHz, while the results at 2.35 GHz and 2.40 GHz are below the results from the simulations in ADS. 
 	\subsection{Third-order intermodulation distortion}
-	The third-order intermodulation distortion (TOIMD) was measured to be below -22dBc for all output power levels up to 38dBm. This level of TOIMD is similar to what was achieved in a comparable amplifier design described in [4], which should mean that this is an acceptable TOIMD level, meaning the amplifier shows good linearity.
+	The third-order intermodulation distortion (TOIMD) was measured to be below -22dBc for all output power levels up to 38dBm. This level of TOIMD is similar to what was achieved in a comparable amplifier design described in \cite{5WLTE}, which should mean that this is an acceptable TOIMD level, again indicating that the amplifier shows good linearity.
   \section{What happened}
   The shape of the measured small-signal gain curve shows that the maximum gain is not at our center frequency of 2.40 GHz where it was designed to be, but probably at or above 2.45GHz. This is most probably due to incorrect matching at the input or output. Since the center frequency was shifted upwards, this indicates that the electrical length of the matching network stubs is shorter than expected. This again leads to the observation that the propagation speed in the substrate is higher than expected, which must mean that the permittivity of the substrate is lower than expected.
 
   Variations in the relative permittivity of the substrate is not uncommon when using standard FR-4 substrate, as this type of substrate by nature has a highly variable permittivity. If absolute control of the permittivity of the substrate is required, special, more expensive RF substrate should be used.
 
   Since the small-signal gain at 2.45 GHz was well above the requirements, it is highly probable that the amplifier would meet the requirement specifications if some effort was put into tuning the input and output matching networks to have the input and output impedances matched as closely as possible to 50 Ohms.
+
   \section{Conclusion}
   The project was successful in designing an RF power amplifier that is unconditionally stable, shows quite good efficiency and linearity characteristics and is functional in amplifying RF frequency signals.
 
