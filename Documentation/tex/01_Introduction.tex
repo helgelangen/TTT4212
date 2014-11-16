@@ -1,1 +1,17 @@
 \chapter{Introduction}
+In the course TTT4212 RF/Microwave design and measurement techniques at NTNU, the students are given the task of designing, building and verifying the performance parameters of an RF power amplifier. The amplifier should fulfill the following requirements and design restrictions:
+
+\begin{itemize}
+	\item Center operating frequency of 2.4 GHz
+	\item Based on the Cree CGH40010F GaN transistor
+	\item Drain voltage biased at 28V
+	\item Gate voltage biased at -3.0V or higher
+	\item The amplifier should be unconditionally stable
+	\item Small-signal bandwidth of at least 100 Mhz
+	\item Small-signal gain of at least 13dB throughout the bandwidth
+	\item Output power of at least 39dBm with a single-tone input power of 27dBm
+	\item Some geometrical restrictions for the board layout are given to make the amplifier fit on a standardized heatsink, to avoid the added time, cost and complications of manufacturing customized heatsinks for each group of students.
+\end{itemize}
+The power added efficiency (with a single-tone input signal at 27dBm) and intermodulation distortion (for a two-tone signal with 5 Mhz spacing and a peak output power of 38 dBm) should also be measured, however, no requirements for these performance parameters are given, and it will be up to the group members’ to decide which parameters to focus on optimizing (as long as the requirement specification is fulfilled.
+
+The circuit shall be designed and simulated in the Keysight Advanced Design System (ADS) software suite for computer-aided design (CAD) and simulation of microwave circuits, and all performance parameters shall be verified to be within the requirement specification before proceeding to making a board layout (also in ADS), generating the Gerber production files for having the printed circuit board manufactured, and then building the amplifier and doing real world measurements at the lab.

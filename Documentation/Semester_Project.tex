@@ -3,7 +3,7 @@
   \usepackage{babel,geometry,amsmath}
   \usepackage{graphicx,afterpage}
   \usepackage[nottoc,numbib]{tocbibind}
-
+  \renewcommand{\labelitemi}{$-$}
   \newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \dotfill}}
   \newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
 
@@ -26,9 +26,7 @@
 
   \include{./tex/04_Results}
 
-  \include{./tex/05_Discussion}
-
-  \include{./tex/06_Conclusion}
+  \include{./tex/05_Discussion_Conclusion}
 
   \include{./tex/09_References}
   
