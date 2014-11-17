@@ -18,7 +18,7 @@
 
   \fancypagestyle{plain}{ %
     \fancyhf{} % remove everything
-    \fancyfoot[LE,RO]{\thepage}
+    \fancyfoot[LO,RE]{\thepage}
     \renewcommand{\headrulewidth}{0pt} % remove lines as well
     %\renewcommand{\footrulewidth}{0pt}
   }
@@ -31,11 +31,12 @@
 
   \input{./tex/title}
   \clearpage
+  \setcounter{page}{1}
 
   \include{./tex/00_Abstract}
   \clearpage
 
-  \tableofcontents
+  \tableofcontents	
   \clearpage
 
   \include{./tex/01_Introduction}
