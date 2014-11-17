@@ -72,31 +72,4 @@
     \end{figure}
 	We were at liberty to choose three set frequencies to perform the large-signal testing at. We chose the frequencies of 2.35 GHz, 2.40 GHz and 2.45 GHz, because testing at these frequencies would give us the best prerequisites for determining if we had met the requirement specifications within the band of operation. As shown in figure~\ref{fig:fig_large_meas} there are several items that will introduce losses in the signal pathway, all of those must be subtracted from the measured power levels when analyzing the results in Matlab.
 
-  \subsection{Calculations}
-  Table~\ref{tab:cree_sparm} lists the S-Parameters for the transistor as given in \cite{CreeDS}. Using these, we can calculate the $K$ and $\lvert \Delta \rvert$ factors to determine the stability using equations (6.31) and (6.32) in \cite{Pozar}.
-  \begin{table}[h]
-	  \centering
-  \begin{tabular}{l l l l}
-	  $S_1$$_1$ & $0.9 \angle 165^{\circ}$ & $S_{12}$ & $0.019 \angle -17.6^{\circ}$ \\
-	  $S_{21}$ & $4.21 \angle 46.9^{\circ}$ & $S_{22}$ & $0.39 \angle -162^{\circ}$ \\
-  \end{tabular}
-	  \caption{S-parameters for Cree CGH40010}
-	  \label{tab:cree_sparm}
-
-  \end{table}
-
-  Using these values we find $K = 0.732$ and $\lvert \Delta \rvert = 0.282$. \emph{Rollet's condition} specifies that an amplifier will be unconditionally stable if $K > 1$ and $\lvert \Delta \rvert < 1$. Since only the latter condition is fulfilled in our case, the transistor will not be unconditionally stable by itself.
-
-  \subsection{Stabilization circuit}
-  
-
-
-
-  \section{Bias network}
-
-  
-
-
-
-  \section{Matching network}
   
