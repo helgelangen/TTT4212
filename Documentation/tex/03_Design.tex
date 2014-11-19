@@ -22,7 +22,7 @@
   \end{figure}
   
   \section{Stability}
-  To check if the amplifier is stable, we used the small-signal S-parameter simulations in ADS with added blocks for measuring the stability factors ($\mu$ and $\mu_{prime}) on the input and output. According to the measurements, the amplifier is stable at higher frequencies, but at lower frequencies it is unstable. To remove the instabilities we will introduce losses at the lower frequencies, by adding a series RC element at the input, and a resistor at the DC bias feed point as shown in figure~\ref{fig:fig_stab_net}.
+  To check if the amplifier is stable, we used the small-signal S-parameter simulations in ADS with added blocks for measuring the stability factors ($\mu$ and $\mu_{prime}$) on the input and output. According to the measurements, the amplifier is stable at higher frequencies, but at lower frequencies it is unstable. To remove the instabilities we will introduce losses at the lower frequencies, by adding a series RC element at the input, and a resistor at the DC bias feed point as shown in figure~\ref{fig:fig_stab_net}.
   \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{img/Stability_network}
@@ -31,7 +31,7 @@
   \end{figure}
   The capacitor Kap4 and Resistor R3 presents a high impedance for lower frequencies, but for higher the capacitor is an effective short. The resistor R4 is introduced as a loss for all frequencies.
   
-  The values C,R1 and R2 were found by using ADS’ optimization feature, with optimization goals for the stability factors ($\mu$ and $\mu_{prime}) and the maximum available gain. The lowest value for the stability factors across the simulated frequency range from 0Hz to 6GHz was 1.05.
+  The values C,R1 and R2 were found by using ADS’ optimization feature, with optimization goals for the stability factors ($\mu$ and $\mu_{prime}$) and the maximum available gain. The lowest value for the stability factors across the simulated frequency range from 0Hz to 6GHz was 1.05.
 
   \section{Matching}
   When stabilizing the amplifier, one of the goals for optimization was maximum available power. To achieve this power, one must match the input and output to 50 Ohm. To realise this without having to mount more components we designed a L-network consisting of an open circuit stub and a microstrip line as shown in figure~\ref{fig:fig_match_net}.
