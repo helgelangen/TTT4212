@@ -4,7 +4,8 @@
   \usepackage{graphicx,afterpage,float}
   \usepackage[nottoc,numbib]{tocbibind}
   \usepackage[hidelinks]{hyperref}
-   \usepackage{fancyhdr}
+  \usepackage[toc,page]{appendix}
+  \usepackage{fancyhdr}
   \setlength{\headheight}{13.6pt}
   \pagestyle{fancy}
   \renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
@@ -50,6 +51,11 @@
 
   \include{./tex/05_Discussion_Conclusion}
 
+  \addcontentsline{toc}{chapter}{Appendix}
+
+  \appendix
+ 
   \include{./tex/09_References}
+
   
 \end{document}
